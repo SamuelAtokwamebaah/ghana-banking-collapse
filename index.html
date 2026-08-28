@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Killed Ghana's Savings &amp; Loans Companies</title>
+<style>
+  :root {
+    color-scheme: light;
+    --plane:          #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-ctx:     #86b6ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --plane:          #0d0d0d;
+      --surface-1:      #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-ctx:     #184f95;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --plane:          #0d0d0d;
+    --surface-1:      #1a1a19;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --grid:           #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-ctx:     #184f95;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 5rem;
+    background: var(--plane);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 62rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  header h1 { font-size: clamp(1.6rem,4vw,2.15rem); line-height:1.15; margin:0 0 .5rem; letter-spacing:-.015em; text-wrap:balance; }
+  header p  { margin:0; color: var(--text-secondary); max-width: 60ch; }
+  header .src { margin-top:.75rem; font-size:.82rem; color: var(--text-muted); }
+
+  figure {
+    margin: 0;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  figcaption { display:flex; flex-direction:column; gap:.3rem; }
+  figcaption .t { font-size:1.02rem; font-weight:650; letter-spacing:-.005em; }
+  figcaption .s { font-size:.87rem; color: var(--text-secondary); max-width:64ch; }
+
+  .rows { display:flex; flex-direction:column; gap:2px; }
+  .row { display:grid; grid-template-columns: minmax(9rem,13rem) 1fr; align-items:center; gap:.75rem; }
+  .row .lab { font-size:.83rem; color: var(--text-secondary); text-align:right; overflow-wrap:anywhere; }
+  .track { position:relative; height:22px; display:flex; align-items:center; }
+  .track::before {
+    content:""; position:absolute; inset:0 0 0 0; border-left:1px solid var(--baseline);
+  }
+  .fill {
+    height:16px; background: var(--series-1);
+    border-radius:0 4px 4px 0; min-width:2px;
+    transition: filter .12s ease;
+  }
+  .fill.ctx { background: var(--series-ctx); }
+  .row:hover .fill { filter: brightness(1.12); }
+  .val {
+    position:absolute; font-size:.79rem; color: var(--text-secondary);
+    font-variant-numeric: tabular-nums; white-space:nowrap; padding-left:.45rem;
+  }
+  .refline {
+    position:absolute; top:-1px; bottom:-1px; width:1px;
+    background: var(--baseline); pointer-events:none;
+  }
+  .refnote { font-size:.76rem; color: var(--text-muted); margin-top:.35rem; }
+
+  /* 2x2 unit matrix */
+  .matrix { display:grid; grid-template-columns: 7.5rem 1fr 1fr; gap:2px; align-items:stretch; }
+  .mh { font-size:.78rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.07em; padding:.3rem .1rem; align-self:end; }
+  .mh.c { text-align:center; }
+  .rh { font-size:.8rem; color: var(--text-secondary); display:flex; align-items:center; justify-content:flex-end; padding-right:.6rem; text-align:right; }
+  .cell {
+    background: color-mix(in srgb, var(--grid) 45%, transparent);
+    border-radius:6px; padding:.7rem; min-height:5.5rem;
+    display:flex; flex-direction:column; gap:.5rem; align-items:center; justify-content:center;
+  }
+  .cell.hi { background: color-mix(in srgb, var(--series-1) 12%, transparent); }
+  .dots { display:flex; flex-wrap:wrap; gap:4px; justify-content:center; max-width:11rem; }
+  .dot { width:11px; height:11px; border-radius:50%; background: var(--series-ctx); box-shadow:0 0 0 2px var(--surface-1); }
+  .cell.hi .dot { background: var(--series-1); }
+  .cnum { font-size:1.5rem; font-weight:650; line-height:1; font-variant-numeric:tabular-nums; }
+  .cell.hi .cnum { color: var(--series-1); }
+
+  details { margin-top:.25rem; }
+  summary { cursor:pointer; font-size:.82rem; color: var(--text-secondary); padding:.2rem 0; }
+  summary:focus-visible { outline:2px solid var(--series-1); outline-offset:2px; border-radius:3px; }
+  table { border-collapse:collapse; width:100%; font-size:.82rem; margin-top:.6rem; }
+  th, td { text-align:left; padding:.32rem .6rem .32rem 0; border-bottom:1px solid var(--grid); }
+  th { color: var(--text-muted); font-weight:600; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; padding-right:1rem; }
+  .scroll { overflow-x:auto; }
+
+  #tip {
+    position:fixed; pointer-events:none; opacity:0; transition:opacity .1s;
+    background: var(--surface-1); color: var(--text-primary);
+    border:1px solid var(--border); border-radius:7px;
+    padding:.45rem .65rem; font-size:.82rem; line-height:1.35;
+    box-shadow:0 4px 16px rgba(0,0,0,.14); z-index:50; max-width:19rem;
+  }
+  #tip b { font-weight:650; }
+  #tip .m { color: var(--text-secondary); }
+
+  footer { color: var(--text-muted); font-size:.82rem; border-top:1px solid var(--grid); padding-top:1rem; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: minmax(6.5rem,8.5rem) 1fr; }
+    .matrix { grid-template-columns: 4.5rem 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>What killed Ghana's savings &amp; loans companies</h1>
+  <p>All 23 savings and loans companies and finance houses whose licences the Bank of Ghana revoked on 16 August 2019. Every figure is transcribed by hand from Annex 2 of the revocation notice.</p>
+  <p class="src">Source: Bank of Ghana, <i>Notice of Revocation of Licences of Insolvent Savings and Loans Companies and Finance Houses</i>, 16 August 2019. n = 23.</p>
+</header>
+
+<figure>
+  <figcaption>
+    <span class="t">Liquidity failure is the symptom. Related-party lending is the cause.</span>
+    <span class="s">Number of institutions where each cause appears in the regulator's stated reasons. Institutions typically failed for several reasons at once, so these do not sum to 23.</span>
+  </figcaption>
+  <div class="rows" id="c1"></div>
+  <details><summary>View as table</summary><div class="scroll"><table id="t1"></table></div></details>
+</figure>
+
+<figure>
+  <figcaption>
+    <span class="t">Where the money went, and how it was hidden</span>
+    <span class="s">Each dot is one institution, placed by whether the notice cites related-party exposure and whether it cites misreporting or false accounting records. The two travel together: 14 of the 17 related-party cases also involved misreporting.</span>
+  </figcaption>
+  <div class="matrix" id="c2"></div>
+  <details><summary>View as table</summary><div class="scroll"><table id="t2"></table></div></details>
+</figure>
+
+<figure>
+  <figcaption>
+    <span class="t">The regulator knew, on average, two and a half years early</span>
+    <span class="s">Years between the date the Bank of Ghana states each institution became insolvent and the date its licence was revoked. Twelve of the twenty were insolvent for more than two years. Three institutions gave no date.</span>
+  </figcaption>
+  <div class="rows" id="c3"></div>
+  <div class="refnote" id="c3note"></div>
+  <details><summary>View as table</summary><div class="scroll"><table id="t3"></table></div></details>
+</figure>
+
+<figure>
+  <figcaption>
+    <span class="t">Two thirds of the losses sit in five institutions</span>
+    <span class="s">Net-worth deficit at revocation, GHS millions. Twenty-one of the 23 reported a deficit, totalling GHS 2.30 billion. The five largest account for 68% of it — shown in the darker tone.</span>
+  </figcaption>
+  <div class="rows" id="c4"></div>
+  <details><summary>View as table</summary><div class="scroll"><table id="t4"></table></div></details>
+</figure>
+
+<footer>
+  Analysis and dataset: <code>savings_loans_verified.csv</code>. Causes are as stated by the regulator and hand-coded from the notice; they reflect what the Bank of Ghana chose to publish. With n = 23 these are descriptive findings, not statistical ones.
+</footer>
+
+</div>
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const DATA = {
+  causes: [
+    {label:"Liquidity failure", n:21},
+    {label:"Related-party exposure", n:17},
+    {label:"Misreporting / false records", n:15},
+    {label:"High non-performing loans", n:14},
+    {label:"Governance failure", n:10},
+    {label:"Unauthorised structural change", n:7},
+    {label:"Ignored BoG findings", n:6},
+    {label:"Failed to publish accounts", n:4},
+    {label:"Stopped prudential returns", n:4},
+    {label:"Ceased ops without approval", n:3}
+  ],
+  quad: {
+    both:["Adom","AllTime","CDH","Dream","Express","First Allied","First African","FirstTrust","Global Access","GN","Ideal","Legacy Capital","Midland","Unicredit"],
+    rp:["Accent","ASN","Crest"],
+    mr:["Women's World Banking"],
+    neither:["Alpha Capital","Commerz","First Ghana","IFS","Sterling"]
+  },
+  lag: [
+    {name:"Sterling",years:9.5,since:"March 2010"},{name:"Crest",years:4.6,since:"2015"},
+    {name:"Dream",years:4.6,since:"2015"},{name:"FirstTrust",years:4.6,since:"2015"},
+    {name:"Express",years:3.6,since:"2016"},{name:"Global Access",years:3.6,since:"2016"},
+    {name:"ASN",years:2.9,since:"October 2016"},{name:"Alpha Capital",years:2.7,since:"December 2016"},
+    {name:"Ideal",years:2.6,since:"2017"},{name:"Midland",years:2.6,since:"January 2017"},
+    {name:"Accent",years:2.5,since:"March 2017"},{name:"First African",years:2.0,since:"August 2017"},
+    {name:"Women's World Banking",years:1.9,since:"October 2017"},{name:"First Allied",years:1.5,since:"March 2018"},
+    {name:"Adom",years:1.0,since:"August 2018"},{name:"AllTime",years:1.0,since:"August 2018"},
+    {name:"Legacy Capital",years:1.0,since:"August 2018"},{name:"CDH",years:1.0,since:"September 2018"},
+    {name:"IFS",years:0.7,since:"December 2018"},{name:"Unicredit",years:0.7,since:"December 2018"}
+  ],
+  deficit: [
+    {name:"First Allied",m:661.84},{name:"Dream",m:333.46},{name:"Unicredit",m:221.32},
+    {name:"FirstTrust",m:175.90},{name:"CDH",m:171.36},{name:"Midland",m:148.92},
+    {name:"Express",m:119.83},{name:"Ideal",m:117.50},{name:"Global Access",m:58.19},
+    {name:"Accent",m:55.76},{name:"Women's World Banking",m:45.56},{name:"Commerz",m:40.99},
+    {name:"GN",m:30.70},{name:"AllTime",m:23.15},{name:"First African",m:22.29},
+    {name:"Legacy Capital",m:19.52},{name:"Crest",m:17.55},{name:"First Ghana",m:14.08},
+    {name:"Alpha Capital",m:11.51},{name:"Adom",m:9.60},{name:"IFS",m:2.29}
+  ]
+};
+
+const tip = document.getElementById("tip");
+function bindTip(el, html) {
+  el.addEventListener("pointerenter", () => { tip.innerHTML = html; tip.style.opacity = 1; });
+  el.addEventListener("pointermove", e => {
+    const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    let x = e.clientX + pad, y = e.clientY + pad;
+    if (x + w > innerWidth - 8) x = e.clientX - w - pad;
+    if (y + h > innerHeight - 8) y = e.clientY - h - pad;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  });
+  el.addEventListener("pointerleave", () => { tip.style.opacity = 0; });
+}
+
+// Generic horizontal bar chart
+function bars(mountId, items, opts) {
+  const mount = document.getElementById(mountId);
+  const max = opts.max || Math.max(...items.map(opts.value));
+  const SCALE = 0.84;               // leaves room for the outside value label
+  const pct = v => (v / max) * 100 * SCALE;
+  items.forEach((d, i) => {
+    const row = document.createElement("div");
+    row.className = "row";
+    const lab = document.createElement("div");
+    lab.className = "lab"; lab.textContent = opts.label(d);
+    const track = document.createElement("div");
+    track.className = "track";
+    const fill = document.createElement("div");
+    fill.className = "fill" + (opts.ctx && opts.ctx(d, i) ? " ctx" : "");
+    fill.style.width = Math.max(0.4, pct(opts.value(d))) + "%";
+    const val = document.createElement("span");
+    val.className = "val"; val.textContent = opts.display(d);
+    val.style.left = pct(opts.value(d)) + "%";
+    track.appendChild(fill); track.appendChild(val);
+    if (opts.ref != null) {
+      const r = document.createElement("div");
+      r.className = "refline";
+      r.style.left = pct(opts.ref) + "%";
+      if (i === items.length - 1) r.style.bottom = "0";
+      track.appendChild(r);
+    }
+    row.appendChild(lab); row.appendChild(track);
+    bindTip(row, opts.tip(d));
+    mount.appendChild(row);
+  });
+}
+
+function table(id, cols, rows) {
+  const t = document.getElementById(id);
+  t.innerHTML = "<thead><tr>" + cols.map((c,i) => "<th" + (i ? " class='n'" : "") + ">" + c + "</th>").join("") + "</tr></thead>"
+    + "<tbody>" + rows.map(r => "<tr>" + r.map((c,i) => "<td" + (i ? " class='n'" : "") + ">" + c + "</td>").join("") + "</tr>").join("") + "</tbody>";
+}
+
+// 1 — failure causes
+bars("c1", DATA.causes, {
+  max: 23,
+  label: d => d.label,
+  value: d => d.n,
+  display: d => d.n + " of 23",
+  tip: d => "<b>" + d.label + "</b><br><span class='m'>" + d.n + " of 23 institutions — " + Math.round(d.n / 23 * 100) + "%</span>"
+});
+table("t1", ["Stated cause", "Institutions", "Share of 23"], DATA.causes.map(d => [d.label, d.n, Math.round(d.n/23*100) + "%"]));
+
+// 2 — 2x2 co-occurrence
+(function () {
+  const m = document.getElementById("c2");
+  const cells = [
+    ["", "mh", ""], ["Misreporting cited", "mh c", ""], ["No misreporting", "mh c", ""],
+    ["Related-party exposure cited", "rh", ""], ["both", "cell hi", ""], ["rp", "cell", ""],
+    ["No related-party exposure", "rh", ""], ["mr", "cell", ""], ["neither", "cell", ""]
+  ];
+  const meta = {
+    both:   ["Related-party lending and misreporting", "The dominant pattern: money moved to companies the owners controlled, and the books were kept so it did not show."],
+    rp:     ["Related-party lending, no misreporting cited", "Extraction without a documented cover-up."],
+    mr:     ["Misreporting, no related-party lending", "Accounting failure without insider extraction."],
+    neither:["Neither cited", "Failed on capital and liquidity alone. First Ghana Savings and Loans, founded 1956, is in this group."]
+  };
+  cells.forEach(([key, cls]) => {
+    const el = document.createElement("div");
+    el.className = cls;
+    if (cls.startsWith("cell")) {
+      const list = DATA.quad[key];
+      const dots = document.createElement("div"); dots.className = "dots";
+      list.forEach(() => { const d = document.createElement("span"); d.className = "dot"; dots.appendChild(d); });
+      const num = document.createElement("div"); num.className = "cnum"; num.textContent = list.length;
+      el.appendChild(num); el.appendChild(dots);
+      bindTip(el, "<b>" + meta[key][0] + " — " + list.length + "</b><br><span class='m'>" + meta[key][1] + "</span><br><br><span class='m'>" + list.join(", ") + "</span>");
+    } else {
+      el.textContent = key;
+    }
+    m.appendChild(el);
+  });
+  table("t2", ["Group", "Institutions", "Count"], [
+    ["Related-party + misreporting", DATA.quad.both.join(", "), DATA.quad.both.length],
+    ["Related-party only", DATA.quad.rp.join(", "), DATA.quad.rp.length],
+    ["Misreporting only", DATA.quad.mr.join(", "), DATA.quad.mr.length],
+    ["Neither", DATA.quad.neither.join(", "), DATA.quad.neither.length]
+  ]);
+})();
+
+// 3 — supervisory lag
+bars("c3", DATA.lag, {
+  label: d => d.name,
+  value: d => d.years,
+  display: d => d.years.toFixed(1) + " yrs",
+  ref: 2,
+  tip: d => "<b>" + d.name + "</b><br><span class='m'>Insolvent from " + d.since + "<br>Licence revoked 16 August 2019<br>" + d.years.toFixed(1) + " years</span>"
+});
+document.getElementById("c3note").textContent = "Vertical rule marks two years. Median lag 2.6 years.";
+table("t3", ["Institution", "Insolvent since", "Years to revocation"],
+  DATA.lag.map(d => [d.name, d.since, d.years.toFixed(1)]));
+
+// 4 — deficit concentration
+const totalDef = DATA.deficit.reduce((a, b) => a + b.m, 0);
+bars("c4", DATA.deficit, {
+  label: d => d.name,
+  value: d => d.m,
+  ctx: (d, i) => i >= 5,
+  display: d => d.m.toFixed(1),
+  tip: d => "<b>" + d.name + "</b><br><span class='m'>Net worth &minus;GHS " + d.m.toFixed(2) + "m<br>" + (d.m / totalDef * 100).toFixed(1) + "% of the total deficit</span>"
+});
+table("t4", ["Institution", "Net-worth deficit (GHS m)", "Share of total"],
+  DATA.deficit.map(d => [d.name, d.m.toFixed(2), (d.m / totalDef * 100).toFixed(1) + "%"]));
+</script>
+</body>
+</html>

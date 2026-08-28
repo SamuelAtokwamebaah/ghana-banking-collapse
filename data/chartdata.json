@@ -1,0 +1,266 @@
+{
+ "causes": [
+  {
+   "label": "Liquidity failure",
+   "n": 21
+  },
+  {
+   "label": "Related-party exposure",
+   "n": 17
+  },
+  {
+   "label": "Misreporting / false records",
+   "n": 15
+  },
+  {
+   "label": "High non-performing loans",
+   "n": 14
+  },
+  {
+   "label": "Governance failure",
+   "n": 10
+  },
+  {
+   "label": "Unauthorised structural change",
+   "n": 7
+  },
+  {
+   "label": "Ignored BoG findings",
+   "n": 6
+  },
+  {
+   "label": "Failed to publish accounts",
+   "n": 4
+  },
+  {
+   "label": "Stopped prudential returns",
+   "n": 4
+  },
+  {
+   "label": "Ceased ops without approval",
+   "n": 3
+  }
+ ],
+ "quad": {
+  "both": [
+   "Adom",
+   "AllTime",
+   "CDH",
+   "Dream",
+   "Express",
+   "First Allied",
+   "First African",
+   "FirstTrust",
+   "Global Access",
+   "GN",
+   "Ideal",
+   "Legacy Capital",
+   "Midland",
+   "Unicredit"
+  ],
+  "rp": [
+   "Accent",
+   "ASN",
+   "Crest"
+  ],
+  "mr": [
+   "Women's World Banking"
+  ],
+  "neither": [
+   "Alpha Capital",
+   "Commerz",
+   "First Ghana",
+   "IFS",
+   "Sterling"
+  ]
+ },
+ "lag": [
+  {
+   "name": "Sterling",
+   "years": 9.5,
+   "since": "2010-03"
+  },
+  {
+   "name": "Crest",
+   "years": 4.6,
+   "since": "2015"
+  },
+  {
+   "name": "Dream",
+   "years": 4.6,
+   "since": "2015"
+  },
+  {
+   "name": "FirstTrust",
+   "years": 4.6,
+   "since": "2015"
+  },
+  {
+   "name": "Express",
+   "years": 3.6,
+   "since": "2016"
+  },
+  {
+   "name": "Global Access",
+   "years": 3.6,
+   "since": "2016"
+  },
+  {
+   "name": "ASN",
+   "years": 2.9,
+   "since": "2016-10"
+  },
+  {
+   "name": "Alpha Capital",
+   "years": 2.7,
+   "since": "2016-12"
+  },
+  {
+   "name": "Ideal",
+   "years": 2.6,
+   "since": "2017"
+  },
+  {
+   "name": "Midland",
+   "years": 2.6,
+   "since": "2017-01"
+  },
+  {
+   "name": "Accent",
+   "years": 2.5,
+   "since": "2017-03"
+  },
+  {
+   "name": "First African",
+   "years": 2.0,
+   "since": "2017-08"
+  },
+  {
+   "name": "Women's World Banking",
+   "years": 1.9,
+   "since": "2017-10"
+  },
+  {
+   "name": "First Allied",
+   "years": 1.5,
+   "since": "2018-03"
+  },
+  {
+   "name": "Adom",
+   "years": 1.0,
+   "since": "2018-08"
+  },
+  {
+   "name": "AllTime",
+   "years": 1.0,
+   "since": "2018-08"
+  },
+  {
+   "name": "CDH",
+   "years": 1.0,
+   "since": "2018-09"
+  },
+  {
+   "name": "Legacy Capital",
+   "years": 1.0,
+   "since": "2018-08"
+  },
+  {
+   "name": "IFS",
+   "years": 0.7,
+   "since": "2018-12"
+  },
+  {
+   "name": "Unicredit",
+   "years": 0.7,
+   "since": "2018-12"
+  }
+ ],
+ "deficit": [
+  {
+   "name": "First Allied",
+   "m": 661.84
+  },
+  {
+   "name": "Dream",
+   "m": 333.46
+  },
+  {
+   "name": "Unicredit",
+   "m": 221.32
+  },
+  {
+   "name": "FirstTrust",
+   "m": 175.9
+  },
+  {
+   "name": "CDH",
+   "m": 171.36
+  },
+  {
+   "name": "Midland",
+   "m": 148.92
+  },
+  {
+   "name": "Express",
+   "m": 119.83
+  },
+  {
+   "name": "Ideal",
+   "m": 117.5
+  },
+  {
+   "name": "Global Access",
+   "m": 58.19
+  },
+  {
+   "name": "Accent",
+   "m": 55.76
+  },
+  {
+   "name": "Women's World Banking",
+   "m": 45.56
+  },
+  {
+   "name": "Commerz",
+   "m": 40.99
+  },
+  {
+   "name": "GN",
+   "m": 30.7
+  },
+  {
+   "name": "AllTime",
+   "m": 23.15
+  },
+  {
+   "name": "First African",
+   "m": 22.29
+  },
+  {
+   "name": "Legacy Capital",
+   "m": 19.52
+  },
+  {
+   "name": "Crest",
+   "m": 17.55
+  },
+  {
+   "name": "First Ghana",
+   "m": 14.08
+  },
+  {
+   "name": "Alpha Capital",
+   "m": 11.51
+  },
+  {
+   "name": "Adom",
+   "m": 9.6
+  },
+  {
+   "name": "IFS",
+   "m": 2.29
+  }
+ ],
+ "n": 23
+}
