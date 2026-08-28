@@ -4,3 +4,6 @@ __pycache__/
 Thumbs.db
 .obsidian/
 *.tmp
+
+# Built from the CSVs by scripts/build_sqlite.py in about a second.
+sql/*.db

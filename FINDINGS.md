@@ -53,7 +53,7 @@ Measuring each institution's stated insolvency date against the 16 August 2019 r
 | Institutions with a stated insolvency date | 20 of 23 |
 | **Exceeded the 180-day statutory limit** | **20 of 20 — 100%** |
 | Within the limit | **0** |
-| Median overrun | **5.3×** the statutory maximum (957 days) |
+| Median overrun | **5.2×** the statutory maximum (928 days) |
 | Worst | **19.2×** — Sterling Financial Services, 3,455 days |
 
 Not one institution in this dataset was resolved within the period the law prescribes. The median institution traded while insolvent for **more than five times** the statutory maximum.
@@ -136,7 +136,7 @@ Every recommendation below is tied to a specific finding above. The starting poi
 
 ### 1. Enforce the deadline that already exists — and publish every extension
 
-**Finding:** 20 of 20 institutions breached the 180-day statutory limit; median overrun 5.3×.
+**Finding:** 20 of 20 institutions breached the 180-day statutory limit; median overrun 5.2×.
 
 The first draft of this analysis recommended creating a statutory clock. **Checking the Act showed one already exists** — sections 104 to 106, in mandatory terms. The recommendation therefore is not to legislate. It is to close the gap between what the statute obliges and what happened.
 

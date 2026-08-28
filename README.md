@@ -13,7 +13,7 @@ Every financial institution closed in Ghana's banking-sector clean-up, compiled 
 The Bank of Ghana revoked 23 savings and loans and finance house licences on 16 August 2019, publishing its reasons for each. Coding those reasons shows the failures were not accidents of a hard market:
 
 - **Related-party lending appears in 17 of 23 institutions** — and 14 of those 17 also involved misreporting or false accounting records. That co-occurrence is the story: money moved to companies the owners controlled, and the books were kept so it did not show.
-- **Every institution breached the statutory deadline — all twenty of them.** Act 930 s.105–106 require capital adequacy to be restored within **180 days**, after which the Bank of Ghana *shall* resolve the institution. Median overrun: **5.3×**. Worst: Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011 — and kept its licence until **2019**. That is **19.2×** the statutory maximum.
+- **Every institution breached the statutory deadline — all twenty of them.** Act 930 s.105–106 require capital adequacy to be restored within **180 days**, after which the Bank of Ghana *shall* resolve the institution. Median overrun: **5.2×**. Worst: Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011 — and kept its licence until **2019**. That is **19.2×** the statutory maximum.
 - **Losses are concentrated, not spread.** Five institutions account for **68%** of the GHS 2.30bn deficit. They were identifiable years in advance.
 
 Liquidity failure — being unable to pay depositors — is cited in 21 of 23 cases. It is the symptom. Related-party extraction is the cause.
@@ -25,7 +25,7 @@ The uncomfortable part is that **the rules already existed**. Act 930 s.64(2) ca
 This was a gap between detection and consequence, not a gap in regulation. The [recommendations](#recommendations) below follow from it — led not by writing new rules but by **publishing the clock and requiring a justification for every extension**. [FINDINGS.md](FINDINGS.md) sets them out at length, alongside a table of the reforms Ghana has already implemented since 2018.
 
 > [!NOTE]
-> **This is what verification is for.** The first draft recommended creating a statutory intervention deadline. Reading Act 930 showed one already existed, which turned a soft observation — *the regulator was slow* — into a hard, checkable finding: **20 of 20 institutions breached a limit written in the statute, by a median of 5.3×.**
+> **This is what verification is for.** The first draft recommended creating a statutory intervention deadline. Reading Act 930 showed one already existed, which turned a soft observation — *the regulator was slow* — into a hard, checkable finding: **20 of 20 institutions breached a limit written in the statute, by a median of 5.2×.**
 
 Read the full analysis in **[FINDINGS.md](FINDINGS.md)**.
 
@@ -73,7 +73,7 @@ Governance sits underneath the other two causes rather than beside them: a board
 
 **Evidence: 6 of 23 ignored the Bank of Ghana's own examination recommendations; 4 had stopped filing prudential returns; 20 of 20 breached the 180-day statutory deadline.**
 
-Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Sterling stopped filing in **May 2010** and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and ss.104–106 already oblige resolution within 180 days — missed in every case, by a median of 5.3×.
+Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Sterling stopped filing in **May 2010** and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and ss.104–106 already oblige resolution within 180 days — missed in every case, by a median of 5.2×.
 
 - Automatic escalation: a defined number of missed returns, or an unremedied examination finding, triggers formal notice, then a supervisory visit, then a presumption that s.107 grounds are met
 - Publish the corrective-action clock — the date it started and the date it expires. A deadline only the supervisor can see is a discretion, not a deadline
@@ -111,6 +111,8 @@ sources/                        the three Bank of Ghana notices, as published
 scripts/
   build_dataset.py              parses the notices -> defunct_institutions.csv
   build_sl_verified.py          the 23 savings & loans, transcribed by hand
+  build_sqlite.py               loads both CSVs into sql/ghana.db
+sql/                            the same findings as runnable SQL queries
 docs/sourcing-deposits.md       where deposit and depositor figures do and don't exist
 index.html                      the charts, self-contained
 ```
@@ -145,10 +147,26 @@ No dependencies beyond Python 3 — standard library only.
 
 ```bash
 git clone https://github.com/SamuelAtokwamebaah/ghana-banking-collapse.git
-cd ghana-banking-collapse/scripts
-python build_sl_verified.py    # the 23, hand-verified
-python build_dataset.py        # all 418, parsed from the notices
+cd ghana-banking-collapse
+python scripts/build_sl_verified.py    # the 23, hand-verified
+python scripts/build_dataset.py        # all 418, parsed from the notices
 ```
+
+### Or query it in SQL
+
+Every finding above is also written as a SQL query, each one ending with its
+expected result as a comment:
+
+```bash
+python scripts/build_sqlite.py                      # loads both CSVs into sql/ghana.db
+sqlite3 sql/ghana.db < sql/10_failure_causes.sql    # -> related_party 17, misreporting 15, ...
+sqlite3 sql/ghana.db < sql/12_supervisory_lag.sql   # -> 20 of 20 breached the 180-day limit
+```
+
+See [`sql/README.md`](sql/README.md) for what each file answers. Writing that
+layer corrected a published figure — the median overrun is **5.2×**, not 5.3×;
+with n = 20 the median is the mean of the two middle values, and the first pass
+had taken the upper one.
 
 To regenerate `data/raw/` from the PDFs in `sources/` (requires `poppler-utils`):
 
@@ -166,6 +184,8 @@ Open `index.html` in any browser for the charts — no server, no internet, no b
 **Failure causes are coded from the regulator's stated reasons**, not inferred. Each of the ten flags is set only where the Bank of Ghana's own text cites it for that institution.
 
 **Blank means blank.** Where a notice gives no figure, the cell is empty — never estimated. Two institutions have no net-worth figure and one reported a *positive* net worth (ASN Financial Services, GHS 628,311) and was revoked anyway.
+
+**Each finding is computed twice, in Python and in SQL.** The scripts in `scripts/` produce the published figures; the queries in `sql/` reproduce them independently from the same CSVs. Doing it twice is what caught the median error noted above, and an earlier one where a currency-symbol regex truncated every net-worth figure by a digit.
 
 **The charts use one hue throughout.** None of them needs categorical colour: identity comes from position and direct labels, which makes the whole set colourblind-safe by construction. Contrast was computed against both light and dark surfaces rather than eyeballed. Every chart has a table view.
 
