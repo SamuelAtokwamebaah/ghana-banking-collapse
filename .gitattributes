@@ -1,0 +1,9 @@
+# Archived primary sources must never be line-ending converted.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.pbix  binary
+
+# Keep extracted source text byte-stable across platforms.
+data/raw/*.txt -text
+*.csv          -text
