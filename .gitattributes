@@ -7,3 +7,7 @@
 # Keep extracted source text byte-stable across platforms.
 data/raw/*.txt -text
 *.csv          -text
+
+# index.html is the rendered output of the analysis, not its source.
+# Exclude it from language stats so the repo reports what the work was.
+index.html linguist-documentation
