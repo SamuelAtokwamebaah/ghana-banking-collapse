@@ -4,7 +4,7 @@ Every financial institution closed in Ghana's banking-sector clean-up, compiled 
 
 **418 institutions. GHS 2.30 billion in net-worth deficits. Over 360,000 depositors.**
 
-📊 **[Interactive charts](https://YOUR-USERNAME.github.io/ghana-banking-collapse/)** · 📄 **[Full findings](FINDINGS.md)**
+📊 **[Interactive charts](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/)** · 📄 **[Full findings](FINDINGS.md)**
 
 ---
 
@@ -76,7 +76,7 @@ The hand pass exists because an earlier keyword-parsed version got it wrong: it 
 No dependencies beyond Python 3 — standard library only.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ghana-banking-collapse.git
+git clone https://github.com/SamuelAtokwamebaah/ghana-banking-collapse.git
 cd ghana-banking-collapse/scripts
 python build_sl_verified.py    # the 23, hand-verified
 python build_dataset.py        # all 418, parsed from the notices
