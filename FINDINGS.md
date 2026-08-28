@@ -25,10 +25,9 @@ Analysis of the 23 savings and loans companies and finance houses whose licences
 
 Liquidity failure at 91% is the *symptom* — it is what a depositor experiences and what triggers the complaint to the regulator. The cause sits above it.
 
-**Related-party exposure appears in 17 of 23. And 14 of those 17 also involved misreporting.** That co-occurrence is the finding. It is not two separate problems; it is one behaviour and its cover-up. Money moved to companies the owners controlled, and the accounts were then kept in a way that hid it.
+**Related-party exposure appears in 17 of 23. And 14 of those 17 also involved misreporting.** That co-occurrence is the finding. On the regulator's account these are not two separate problems: the notice describes funds placed with companies connected to the institutions' owners, and accounts that did not reflect them.
 
 The specifics are unambiguous:
-- **GN Savings** placed **GHS 761.55m** with sister companies in the Groupe Nduom network, and transferred **USD 62.26m** of depositor funds to a US affiliate with no supporting documentation.
 - **uniCredit** had **GHS 160.10m** non-performing with sister company uniSecurities — more than its entire net-worth deficit.
 - **CDH** was exposed to affiliates at **319%** against a 25% regulatory limit.
 - **Global Access** assumed a **GHS 2.91m** personal loan of its majority shareholder, booked it as equity, and concealed the liability in a suspense account.
@@ -117,7 +116,7 @@ What the two together do establish: this was not a technical failure inside a sm
 
 Three conclusions, in order of confidence:
 
-1. **This was a governance failure before it was a financial one.** Undercapitalisation was the mechanism; related-party extraction was the cause. Minimum capital requirements — the main policy response — do not address the behaviour that emptied these institutions.
+1. **This was a governance failure before it was a financial one.** Undercapitalisation was the mechanism; related-party lending, on the regulator’s stated reasons, was the cause. Minimum capital requirements — the main policy response — do not address the behaviour those notices describe.
 2. **The law was adequate; it was not applied.** The Bank of Ghana identified insolvency correctly and early in most cases, and Act 930 obliged it to resolve within 180 days. Not one of the twenty was. The gap was between detection and consequence, and depositors funded it.
 3. **The concentration suggests targeted supervision would have worked.** Five institutions account for two-thirds of the deficit. They were identifiable years in advance.
 
@@ -157,7 +156,7 @@ Again, the power exists. Section 107(1)(e) makes failure to cooperate with the B
 
 ### 3. Make the related-party limit enforceable, not just written
 
-**Finding:** related-party exposure in **17 of 23**, at multiples of the statutory cap. GN placed GHS 761.55m with sister companies; uniCredit GHS 160.10m with uniSecurities; Global Access booked its majority shareholder's personal loan as equity and hid the liability in a suspense account.
+**Finding:** related-party exposure in **17 of 23**, at multiples of the statutory cap. The notice records related-party exposure of GHS 160.10m from uniCredit to uniSecurities; eight related companies at First Allied overdrawn by more than GHS 100m; and, at Global Access, a GHS 2.91m loan contracted by the majority shareholder that was injected as equity, with the liability — in the Bank of Ghana's words — “concealed as a suspense account”.
 
 The limit existed. What was missing was visibility — supervisors could not see the affiliate structures in time, because the institutions themselves defined and reported them.
 
@@ -168,7 +167,7 @@ The limit existed. What was missing was visibility — supervisors could not see
 
 ### 4. Independently verify what stressed institutions report
 
-**Finding:** misreporting in **15 of 23**, and the gap between reported and adjusted figures was enormous. Ideal Finance reported a capital adequacy ratio of **0.52%**; the Bank of Ghana's adjustment put it at **-52.18%**. FirsTrust reported shareholders' funds of -GHS 99.46m; adjusted, -GHS 174.10m. First Allied understated deposit liabilities outright to conceal accumulated losses.
+**Finding:** misreporting in **15 of 23**, and the gap between reported and adjusted figures was enormous. Ideal Finance reported a capital adequacy ratio of **0.52%**; the Bank of Ghana's adjustment put it at **-52.18%**. FirsTrust reported shareholders' funds of -GHS 99.46m; adjusted, -GHS 174.10m. Of First Allied the notice states that reported deposit liabilities were “grossly understated … to conceal losses over the years”.
 
 Supervision that relies on self-reported numbers from institutions with an incentive to misreport will always be late.
 
@@ -184,7 +183,7 @@ Uniform supervisory attention across 400+ institutions guarantees that the large
 
 ### 6. Keep the cost off the taxpayer next time
 
-**Finding:** the state committed **GHS 5 billion** to pay depositors of institutions that had, on this evidence, mostly been emptied by their owners.
+**Finding:** the state committed **GHS 5 billion** to pay depositors of institutions whose stated reasons for failure cite related-party exposure in 17 of 23 cases.
 
 The **Ghana Deposit Protection Corporation**, established under Act 931 and operational from 2019, is the structural answer and it now exists. That is genuine progress.
 
@@ -212,9 +211,42 @@ Honesty requires noting the reforms that followed the clean-up, so none of the a
 
 ---
 
+## Epilogue: where things stand in 2026
+
+*As of August 2026.*
+
+Nearly seven years after the revocations, the receivership of the 23 institutions is still running. **Eric Nana Nipah**, a director of PwC Ghana, remains the appointed Receiver, and the official receivership site at [ghreceiverships.com](https://www.ghreceiverships.com/) continues to carry active notices — demands to borrowers of the resolved institutions to settle outstanding loans, and public auctions of assets, the most recent dated February 2026. No final consolidated receivership report has been published.
+
+On **21 May 2026** the Court of Appeal ordered the Bank of Ghana to restore the licence of **GN Savings and Loans**, one of the 23 institutions in this dataset. The three-member panel overturned an earlier High Court decision that had upheld the revocation, ruled the 2019 revocation **"unfair and unreasonable"**, and directed the Receiver to hand the company's assets and control back to its shareholders.
+
+The Bank of Ghana appealed to the Supreme Court, which on **14 July 2026** stayed the Court of Appeal's judgment in full pending determination of that appeal. The licence has therefore not been restored, and the position established in 2019 stands for now. The final outcome is pending as of August 2026.
+
+> [!IMPORTANT]
+> **What this means for this analysis.** The dataset records the reasons the Bank of Ghana stated at the time of revocation, as published in its notice of 16 August 2019. That document is unchanged, and nothing in the analysis above has been revised in light of the litigation. What has changed is that the legal status of one of the 23 revocations is now contested, and depending on how the Supreme Court rules, the final count of institutions whose licences were validly revoked could differ from the 23 recorded here. This project takes no position on the litigation.
+
+Sources: [Citi Newsroom — Court of Appeal orders BoG to restore GN Bank licence and assets](https://www.citinewsroom.com/2026/05/court-of-appeal-orders-bog-to-restore-gn-bank-licence-assets/), May 2026 · [Citi Newsroom — Supreme Court halts reinstatement of GN Savings licence](https://www.citinewsroom.com/2026/07/supreme-court-halts-reinstatement-of-gn-savings-licence/), July 2026 · [Office of the Receiver](https://www.ghreceiverships.com/), notices to February 2026.
+
+---
+
+## Notice
+
+This project analyses documents published by the Bank of Ghana and other public sources. **It reports what those documents state. It does not independently allege wrongdoing by any institution or any individual.**
+
+- **Every factual claim about a named institution comes from the Bank of Ghana's published notices**, which are archived in [`sources/`](sources/) so that any reader can check the original wording for themselves.
+- **The failure causes are the Bank of Ghana's assessment, not the author's.** They are coded from the reasons the Bank stated, in documents written to justify decisions it had already taken, and they may not be exhaustive. Where an institution is not coded for a cause, that is not evidence the cause was absent — only that the Bank did not cite it.
+- **Some matters remain before the courts.** In May 2026 the Court of Appeal ordered the licence of GN Savings and Loans restored; the Supreme Court stayed that order in July 2026 and the appeal is undetermined. See the [Epilogue](#epilogue-where-things-stand-in-2026). This project takes no position on that or any other proceeding, and nothing here should be read as commenting on their merits.
+- **Where individual institutions are used as examples**, this analysis draws on institutions whose revocations are not currently before the courts. The dataset itself is complete: it records every institution named in the Bank of Ghana's notice, including any whose status is contested.
+- **The author worked on the receivership of these institutions.** This analysis uses only publicly published documents. No information obtained during that engagement has been used, and none of it appears here.
+- Nothing in this repository is legal, financial or investment advice.
+
+**Corrections are welcome and will be made.** If you believe anything here misstates a published document, misattributes a figure, or is out of date, please [open an issue](https://github.com/SamuelAtokwamebaah/ghana-banking-collapse/issues) or contact me. Corrections will be applied and recorded in the commit history, which is public.
+
+---
+
 ## Caveats
 
 - **23 institutions is a small n.** These are descriptive findings, not statistical ones. No significance is claimed and none should be.
+- **The legal status of one of the 23 revocations is contested.** In May 2026 the Court of Appeal ordered GN Savings and Loans’ licence restored; the Supreme Court stayed that order in July 2026 and the appeal is undetermined as of August 2026. This dataset records what the Bank of Ghana stated in 2019 and is unrevised — but the final count could differ. See the [Epilogue](#epilogue-where-things-stand-in-2026).
 - **Causes are as stated by the regulator**, hand-coded from the notice. They reflect what BoG chose to publish, which may not be exhaustive and is written to justify a decision already taken.
 - **"Insolvent since" dates are as stated in the notice**, sometimes as a month, sometimes only a year. Year-only dates were treated as January, which *understates* the lag if anything.
 - **Per-institution deposit values are absent** from the public record — not on the Receiver's site, not in the BoG notices. Sector aggregates exist and are used below; the route to institution-level figures is set out in [Sourcing - Deposits and Depositors](docs/sourcing-deposits.md).
