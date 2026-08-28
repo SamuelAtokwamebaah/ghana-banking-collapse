@@ -18,6 +18,12 @@ The Bank of Ghana revoked 23 savings and loans and finance house licences on 16 
 
 Liquidity failure — being unable to pay depositors — is cited in 21 of 23 cases. It is the symptom. Related-party extraction is the cause.
 
+### What follows from it
+
+The uncomfortable part is that **the rules already existed**. Act 930 s.64(2) capped related-party exposure at 25% of net own funds — CDH was at 319%. Sections 28(1) and 29(2) set minimum net worth and capital adequacy, breached for years. On-site examinations identified the problems; six institutions ignored the recommendations with no consequence.
+
+This was a gap between detection and consequence, not a gap in regulation. [FINDINGS.md](FINDINGS.md) sets out six recommendations that follow from the data — led by putting a **statutory clock on insolvency**, since the median institution here traded while insolvent for 2.6 years — alongside a table of the reforms Ghana has already implemented since 2018.
+
 Read the full analysis in **[FINDINGS.md](FINDINGS.md)**.
 
 ---
