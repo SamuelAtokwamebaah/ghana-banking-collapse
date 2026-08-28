@@ -130,7 +130,7 @@ What follows from these is set out in **Recommendations** below.
 Every recommendation below is tied to a specific finding above. The starting point is uncomfortable and important:
 
 > [!IMPORTANT]
-> **> **The rules were mostly already there.** Act 930 s.64(2) capped related-party exposure at 25% of net own funds — CDH was at **319%**, Legacy Capital at **200%**. Sections 28(1) and 29(2) set minimum net worth and capital adequacy — every one of these institutions breached them, some for years. The Bank of Ghana's own on-site examinations identified the problems and made recommendations; six institutions simply ignored them.**
+> **The rules were mostly already there.** Act 930 s.64(2) capped related-party exposure at 25% of net own funds — CDH was at **319%**, Legacy Capital at **200%**. Sections 28(1) and 29(2) set minimum net worth and capital adequacy — every one of these institutions breached them, some for years. The Bank of Ghana's own on-site examinations identified the problems and made recommendations; six institutions simply ignored them.
 >
 > This was not a gap in regulation. It was a gap between detection and consequence. Recommendations that propose new rules miss the point.
 
@@ -208,7 +208,7 @@ Honesty requires noting the reforms that followed the clean-up, so none of the a
 **The gap that remains is not the rulebook.** Nearly all of the above governs how an institution should be run, and sections 104–106 of Act 930 already oblige the supervisor to act within 180 days once one is failing. On the evidence of this dataset that deadline was missed in every single case, by a median of more than five times. What is missing is any consequence, or even any disclosure, when the supervisor misses its own statutory limit.
 
 > [!NOTE]
-> **> **Verified against Act 930 itself, August 2026.** An earlier draft recommended creating a statutory intervention clock; reading sections 104–106 showed one already existed, which changed the finding in section 2 from *"the regulator was slow"* to *"every institution breached a deadline written in the statute."* The directive table above reflects sources gathered in August 2026 — check [bog.gov.gh](https://www.bog.gov.gh/) for anything issued since.**
+> **Verified against Act 930 itself, August 2026.** An earlier draft recommended creating a statutory intervention clock; reading sections 104–106 showed one already existed, which changed the finding in section 2 from *"the regulator was slow"* to *"every institution breached a deadline written in the statute."* The directive table above reflects sources gathered in August 2026 — check [bog.gov.gh](https://www.bog.gov.gh/) for anything issued since.
 
 ---
 
