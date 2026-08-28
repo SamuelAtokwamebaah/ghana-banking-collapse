@@ -13,16 +13,19 @@ Every financial institution closed in Ghana's banking-sector clean-up, compiled 
 The Bank of Ghana revoked 23 savings and loans and finance house licences on 16 August 2019, publishing its reasons for each. Coding those reasons shows the failures were not accidents of a hard market:
 
 - **Related-party lending appears in 17 of 23 institutions** — and 14 of those 17 also involved misreporting or false accounting records. That co-occurrence is the story: money moved to companies the owners controlled, and the books were kept so it did not show.
-- **The regulator knew, on average, 2.6 years early.** Twelve of twenty institutions were insolvent for more than two years before their licences were revoked. One — Sterling Financial Services — reported a capital adequacy ratio of **-1,469% in March 2010**, folded its operations in 2011 without telling the regulator, and kept its licence until **2019**.
+- **Every institution breached the statutory deadline — all twenty of them.** Act 930 s.105–106 require capital adequacy to be restored within **180 days**, after which the Bank of Ghana *shall* resolve the institution. Median overrun: **5.3×**. Worst: Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011 — and kept its licence until **2019**. That is **19.2×** the statutory maximum.
 - **Losses are concentrated, not spread.** Five institutions account for **68%** of the GHS 2.30bn deficit. They were identifiable years in advance.
 
 Liquidity failure — being unable to pay depositors — is cited in 21 of 23 cases. It is the symptom. Related-party extraction is the cause.
 
 ### What follows from it
 
-The uncomfortable part is that **the rules already existed**. Act 930 s.64(2) capped related-party exposure at 25% of net own funds — CDH was at 319%. Sections 28(1) and 29(2) set minimum net worth and capital adequacy, breached for years. On-site examinations identified the problems; six institutions ignored the recommendations with no consequence.
+The uncomfortable part is that **the rules already existed**. Act 930 s.64(2) capped related-party exposure at 25% of net own funds — CDH ran at 319%. Sections 104–106 set a 180-day statutory clock for resolving a failing institution, in mandatory terms — and it was missed in **every single case**. On-site examinations identified the problems; six institutions ignored the recommendations with no consequence.
 
-This was a gap between detection and consequence, not a gap in regulation. [FINDINGS.md](FINDINGS.md) sets out six recommendations that follow from the data — led by putting a **statutory clock on insolvency**, since the median institution here traded while insolvent for 2.6 years — alongside a table of the reforms Ghana has already implemented since 2018.
+This was a gap between detection and consequence, not a gap in regulation. [FINDINGS.md](FINDINGS.md) sets out six recommendations that follow from it — led not by writing new rules but by **publishing the clock and requiring a justification for every extension** — alongside a table of the reforms Ghana has already implemented since 2018.
+
+> [!NOTE]
+> **This is what verification is for.** The first draft recommended creating a statutory intervention deadline. Reading Act 930 showed one already existed, which turned a soft observation — *the regulator was slow* — into a hard, checkable finding: **20 of 20 institutions breached a limit written in the statute, by a median of 5.3×.**
 
 Read the full analysis in **[FINDINGS.md](FINDINGS.md)**.
 

@@ -36,21 +36,31 @@ The specifics are unambiguous:
 
 ---
 
-## 2. The regulator knew, on average, two and a half years early
+## 2. Every institution breached the statutory deadline. All twenty of them.
 
-Comparing the date the BoG states each institution became insolvent against the 16 August 2019 revocation:
+This is the finding, and it is not a matter of opinion — it is arithmetic against a number written in the law.
+
+**Act 930 sets a clock.** Section 105(2)(b) requires an undercapitalised institution to submit a capital restoration plan within **45 days** and to restore capital adequacy within **180 days**. Section 106(1)(b) gives a significantly undercapitalised institution — one holding less than half its required capital — **90 days** to rectify and **180 days** to restore. Section 106(3) then provides that on failure, or on any earlier deterioration, the Bank of Ghana
+
+> *shall without having to wait for the expiry of that period, place the bank, specialised deposit-taking institution or financial holding company into official administration ... or revoke its licence.*
+
+The verb is **shall**, not *may*.
+
+Measuring each institution's stated insolvency date against the 16 August 2019 revocation, and against that 180-day statutory maximum:
 
 | | |
 |---|---|
-| Median time insolvent before revocation | **2.6 years** |
-| Insolvent more than 2 years | **12 of 20** |
-| Longest | **9.5 years** — Sterling Financial Services |
+| Institutions with a stated insolvency date | 20 of 23 |
+| **Exceeded the 180-day statutory limit** | **20 of 20 — 100%** |
+| Within the limit | **0** |
+| Median overrun | **5.3×** the statutory maximum (957 days) |
+| Worst | **19.2×** — Sterling Financial Services, 3,455 days |
 
-**Sterling is the case that should not exist.** It reported a capital adequacy ratio of **-1,469%** as at March 2010. It stopped submitting returns in May 2010 and folded its operations in 2011 without telling the Bank of Ghana. Its licence was revoked in **August 2019** — eight years after it ceased to exist and nine after the regulator had the numbers.
+Not one institution in this dataset was resolved within the period the law prescribes. The median institution traded while insolvent for **more than five times** the statutory maximum.
 
-Every month of that lag is a month in which an insolvent institution could legally take deposits. This is the policy finding, and it is more important than any individual failure.
+**Sterling is the case that should not exist.** It reported a capital adequacy ratio of **-1,469%** as at March 2010 — some thirty times below the point at which section 106 obliges immediate action. It stopped submitting prudential returns in May 2010 and folded its operations in 2011 without telling the Bank of Ghana. Its licence was revoked in **August 2019**: nine and a half years, or 19 times the statutory maximum, after the regulator had the numbers in front of it.
 
----
+Every month of that overrun is a month an insolvent institution could legally accept new deposits.
 
 ## 3. The losses are concentrated, not spread
 
@@ -108,7 +118,7 @@ What the two together do establish: this was not a technical failure inside a sm
 Three conclusions, in order of confidence:
 
 1. **This was a governance failure before it was a financial one.** Undercapitalisation was the mechanism; related-party extraction was the cause. Minimum capital requirements — the main policy response — do not address the behaviour that emptied these institutions.
-2. **Supervisory timing mattered more than supervisory standards.** The BoG identified insolvency correctly and early in most cases. The gap was between detection and action, and depositors funded that gap.
+2. **The law was adequate; it was not applied.** The Bank of Ghana identified insolvency correctly and early in most cases, and Act 930 obliged it to resolve within 180 days. Not one of the twenty was. The gap was between detection and consequence, and depositors funded it.
 3. **The concentration suggests targeted supervision would have worked.** Five institutions account for two-thirds of the deficit. They were identifiable years in advance.
 
 What follows from these is set out in **Recommendations** below.
@@ -124,23 +134,26 @@ Every recommendation below is tied to a specific finding above. The starting poi
 >
 > This was not a gap in regulation. It was a gap between detection and consequence. Recommendations that propose new rules miss the point.
 
-### 1. Put a statutory clock on insolvency
+### 1. Enforce the deadline that already exists — and publish every extension
 
-**Finding:** median 2.6 years between assessed insolvency and revocation; twelve of twenty over two years; Sterling nine and a half.
+**Finding:** 20 of 20 institutions breached the 180-day statutory limit; median overrun 5.3×.
 
-Act 930 gives the Bank of Ghana the *power* to revoke a licence on determining insolvency. It does not oblige it to do so within any period. The result is that supervisory forbearance has no end point, and every month of it is a month an insolvent institution can legally take new deposits.
+The first draft of this analysis recommended creating a statutory clock. **Checking the Act showed one already exists** — sections 104 to 106, in mandatory terms. The recommendation therefore is not to legislate. It is to close the gap between what the statute obliges and what happened.
 
-**Recommend:** a mandatory, tiered intervention framework — once an institution is assessed insolvent or breaches a capital trigger, a fixed statutory period runs (say 90 days) to recapitalise, with defined escalation and automatic resolution at expiry. Extensions to be granted only in writing, published, and time-limited.
+**Recommend:**
+- **Publish the clock.** For every institution under corrective action, the date the deadline started and the date it expires, disclosed to the market. A deadline nobody outside the supervisor can see is not a deadline; it is a discretion.
+- **Require a written, published justification for every extension of the section 105/106 period**, time-limited and countersigned at board level within the Bank of Ghana. Forbearance may sometimes be correct — the systemic risk of resolving many institutions at once is real. But it should be a recorded decision with a name attached, not a silence.
+- **Report annually on compliance with sections 104–106** — how many institutions entered corrective action, how many were resolved within 180 days, and the distribution of overruns. On the evidence here, that number would have been zero out of twenty.
 
-This is not novel. It is the *prompt corrective action* model used in the United States since FDICIA 1991 and echoed in the EU's early-intervention regime. Ghana has the powers; what it lacks is the obligation to use them on a timetable.
+The rule was never the problem. The absence of any consequence for the supervisor missing its own statutory deadline was.
 
-### 2. Treat a missing return as a trigger, not a tolerated state
+### 2. Treat a missing return as the trigger the Act already makes it
 
-**Finding:** four institutions had stopped submitting prudential returns. Sterling stopped in **May 2010** and kept its licence until 2019. Ideal Finance stopped in November 2018. Alpha Capital stopped in September 2017.
+**Finding:** four institutions had stopped submitting prudential returns. Sterling stopped in **May 2010** and kept its licence until 2019. Ideal Finance stopped in November 2018; Alpha Capital in September 2017.
 
-This is the cheapest early-warning signal available to any regulator. It requires no analysis, no model, no on-site visit — only noticing an absence. It was not acted on.
+Again, the power exists. Section 107(1)(e) makes failure to cooperate with the Bank of Ghana or its examiners — *"including through concealment or failure to submit for inspection any of the books, documents or records"* — a ground for appointing an official administrator. Non-submission of returns is the plainest possible instance, and it is the cheapest signal in supervision: it requires no model and no examination, only noticing an absence.
 
-**Recommend:** automatic escalation on consecutive missed returns — a formal notice, then a supervisory visit, then a presumption of insolvency after a defined number of periods. Non-reporting should never be a stable equilibrium.
+**Recommend:** make it automatic rather than discretionary. A defined number of consecutive missed returns triggers a formal notice, then a supervisory visit, then a presumption that section 107 grounds are met. An institution should not be able to go silent for nine years and keep its licence.
 
 ### 3. Make the related-party limit enforceable, not just written
 
@@ -192,10 +205,10 @@ Honesty requires noting the reforms that followed the clean-up, so none of the a
 | Capital Requirement, Risk Management, and further directives | 15+ issued since 2018 |
 | Large Exposures Directive | September 2025 |
 
-**The gap that remains is timing.** Nearly all of the above governs how an institution should be run. Very little of it obliges the supervisor to act within a defined period once an institution is failing — which, on the evidence of this dataset, is where the depositor losses actually accumulated.
+**The gap that remains is not the rulebook.** Nearly all of the above governs how an institution should be run, and sections 104–106 of Act 930 already oblige the supervisor to act within 180 days once one is failing. On the evidence of this dataset that deadline was missed in every single case, by a median of more than five times. What is missing is any consequence, or even any disclosure, when the supervisor misses its own statutory limit.
 
 > [!NOTE]
-> **> **Verify the current position before publishing this section.** Directives are issued and amended regularly, and the table above reflects sources gathered in August 2026. Check [bog.gov.gh](https://www.bog.gov.gh/) for anything issued since, particularly on prompt corrective action or supervisory timelines — if such a framework now exists, recommendation 1 should credit it rather than propose it.**
+> **> **Verified against Act 930 itself, August 2026.** An earlier draft recommended creating a statutory intervention clock; reading sections 104–106 showed one already existed, which changed the finding in section 2 from *"the regulator was slow"* to *"every institution breached a deadline written in the statute."* The directive table above reflects sources gathered in August 2026 — check [bog.gov.gh](https://www.bog.gov.gh/) for anything issued since.**
 
 ---
 

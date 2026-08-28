@@ -173,8 +173,8 @@
 
 <figure>
   <figcaption>
-    <span class="t">The regulator knew, on average, two and a half years early</span>
-    <span class="s">Years between the date the Bank of Ghana states each institution became insolvent and the date its licence was revoked. Twelve of the twenty were insolvent for more than two years. Three institutions gave no date.</span>
+    <span class="t">Every institution breached the 180-day statutory deadline</span>
+    <span class="s">Years between the date the Bank of Ghana states each institution became insolvent and the date its licence was revoked. Act 930 s.105–106 require capital adequacy to be restored within 180 days, after which the Bank <i>shall</i> resolve the institution. The rule marks that limit. All twenty cleared it — by a median of 5.3&times;. Three institutions gave no date.</span>
   </figcaption>
   <div class="rows" id="c3"></div>
   <div class="refnote" id="c3note"></div>
@@ -344,12 +344,12 @@ bars("c3", DATA.lag, {
   label: d => d.name,
   value: d => d.years,
   display: d => d.years.toFixed(1) + " yrs",
-  ref: 2,
-  tip: d => "<b>" + d.name + "</b><br><span class='m'>Insolvent from " + d.since + "<br>Licence revoked 16 August 2019<br>" + d.years.toFixed(1) + " years</span>"
+  ref: 180/365.25,
+  tip: d => "<b>" + d.name + "</b><br><span class='m'>Insolvent from " + d.since + "<br>Licence revoked 16 August 2019<br>" + d.years.toFixed(1) + " years — " + (d.years*365.25/180).toFixed(1) + "× the 180-day statutory limit</span>"
 });
-document.getElementById("c3note").textContent = "Vertical rule marks two years. Median lag 2.6 years.";
-table("t3", ["Institution", "Insolvent since", "Years to revocation"],
-  DATA.lag.map(d => [d.name, d.since, d.years.toFixed(1)]));
+document.getElementById("c3note").textContent = "Vertical rule marks the 180-day statutory limit (Act 930 s.105–106). Median overrun 5.3×; worst 19.2×.";
+table("t3", ["Institution", "Insolvent since", "Years to revocation", "× statutory limit"],
+  DATA.lag.map(d => [d.name, d.since, d.years.toFixed(1), (d.years*365.25/180).toFixed(1) + "×"]));
 
 // 4 — deficit concentration
 const totalDef = DATA.deficit.reduce((a, b) => a + b.m, 0);
