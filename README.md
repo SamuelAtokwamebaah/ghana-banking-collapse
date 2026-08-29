@@ -1,6 +1,7 @@
 # Ghana's Banking Sector Collapse, 2017–2019
+[![DOI](https://zenodo.org/badge/1349480692.svg)](https://doi.org/10.5281/zenodo.22163244)
 
-Every financial institution closed in Ghana's banking-sector clean-up, compiled from Bank of Ghana primary sources — and an analysis of *why* the 23 savings and loans companies failed.
+Every financial institution closed in Ghana's banking-sector clean-up, compiled from Bank of Ghana primary sources, plus an analysis of *why* the 23 savings and loans companies failed.
 
 **418 institutions. GHS 2.30 billion in net-worth deficits. Over 360,000 depositors.**
 
