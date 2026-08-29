@@ -121,7 +121,8 @@ Sources: [Citi Newsroom — Court of Appeal orders BoG to restore GN Bank licenc
 
 ```
 data/
-  defunct_institutions.csv     418 institutions: category, status, revocation date, receiver, legal basis
+  defunct_institutions.csv     418 institutions: category, status, revocation date,
+                               receiver, resolution mechanism, legal basis
   savings_loans_verified.csv    23 savings & loans: financials, dates, 10 coded failure causes, notes
   chartdata.json                shaped for the charts page
   raw/                          text extracted from the BoG PDFs
@@ -131,7 +132,9 @@ scripts/
   build_sl_verified.py          the 23 savings & loans, transcribed by hand
   build_sqlite.py               loads both CSVs into sql/ghana.db
 sql/                            the same findings as runnable SQL queries
-docs/sourcing-deposits.md       where deposit and depositor figures do and don't exist
+docs/
+  sourcing-deposits.md          where deposit and depositor figures do and don't exist
+  universal-banks.md            the nine banks: what is corroborated, and one correction
 index.html                      the charts, self-contained
 ```
 
@@ -149,7 +152,7 @@ index.html                      the charts, self-contained
 Every count reconciles exactly to the totals the Bank of Ghana states in its own notices (192, 155, 29, 10, 23). `build_dataset.py` asserts these on every run — if a parse breaks, the counts stop matching.
 
 > [!NOTE]
-> The nine universal banks come from Bank of Ghana press releases rather than a single consolidated notice, and are flagged as such in the `source_document` column. Treat that block as needing verification; the other 409 rows come straight from the three archived notices.
+> The nine universal banks come from Bank of Ghana press releases rather than a single consolidated notice. Seven of the nine are now corroborated against a peer-reviewed source; **Premium Bank and Heritage Bank still are not**, and their receiver and resolution mechanism are left blank rather than guessed. That block also carried an error — seven rows described CBG as having “consolidated” the banks it resolved, when it is a bridge institution under Act 930 s.127(11). Both the correction and what remains unverified are set out in [docs/universal-banks.md](docs/universal-banks.md).
 
 ### `savings_loans_verified.csv` — 23 rows
 
@@ -242,6 +245,11 @@ All three primary documents are archived in [`sources/`](sources/).
 - Bank of Ghana — [Revocation of licences of insolvent microfinance companies](https://www.bog.gov.gh/wp-content/uploads/2024/05/NOTICE-OF-REVOCATION-OF-LICENCES-OF-INSOLVENT-MICROFINANCE-COMPANIES-AND-APPOINTMENT-OF-RECEIVER.pdf), 31 May 2019
 - Bank of Ghana — [Revocation of licences of insolvent microcredit companies](https://www.bog.gov.gh/wp-content/uploads/2019/07/NOTICE-OF-REVOCATION-OF-LICENCES-OF-INSOLVENT-MICROCREDIT-COMPANIES.pdf), 31 May 2019
 - Receiver — [Update on full payments to validated depositors](https://www.ghreceiverships.com/update-on-full-payments-to-depositors-whose-claims-have-been-validated-in-the-resolution-process/), 2 March 2020
+
+**Secondary sources**
+
+- Ebenezer Adjei Bediako, Kwadwo Bioh Agyei and Michael Kwame Asabre, ‘The Banking Sector Clean–Up in Ghana, and the Legal Effects of the Appointments of a Receiver and Consolidated Bank Ghana Ltd as a Bridge Institution’, *Ghana Insolvency and Restructuring Journal*, 3rd edn Vol. 1 (No. 1), December 2025 — used to corroborate seven of the nine universal banks and to correct the receiver column. Not archived here: it is copyright CIRIP.
+- *Chancellor Oppong Kyekyeku Kohl v Consolidated Bank Ghana Ltd* [2022] 181 GMJ 694 (CA) — on the legal effect of a bridge institution, and why the receiver rather than the bridge bank is the proper defendant.
 
 ---
 

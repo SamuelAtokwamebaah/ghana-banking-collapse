@@ -50,13 +50,20 @@ CREATE TABLE savings_loans (
 -- All 418 institutions closed in the clean-up, across the three notices
 -- plus the nine universal banks.
 CREATE TABLE defunct_institutions (
-    institution_name    TEXT NOT NULL,
-    category            TEXT NOT NULL,
-    status              TEXT,
-    revocation_date     TEXT,
-    receiver            TEXT,
-    legal_basis         TEXT,
-    source_document     TEXT
+    institution_name     TEXT NOT NULL,
+    category             TEXT NOT NULL,
+    status               TEXT,
+    revocation_date      TEXT,
+    -- Two different facts, recorded separately. The receiver is the person
+    -- appointed under Act 930 s.123(2). The resolution mechanism is how the
+    -- institution was wound down -- a purchase and assumption, a bridge
+    -- institution under s.127(11), or a winding up via the Registrar. Putting
+    -- a mechanism in the receiver column is what produced the error corrected
+    -- in docs/universal-banks.md.
+    receiver             TEXT,
+    resolution_mechanism TEXT,
+    legal_basis          TEXT,
+    source_document      TEXT
 );
 
 CREATE INDEX idx_defunct_category ON defunct_institutions (category);

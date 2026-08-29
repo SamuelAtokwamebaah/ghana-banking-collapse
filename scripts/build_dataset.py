@@ -23,12 +23,13 @@ sl  = read("bog-2019-08-16-savings-loans-revocation.txt")
 rows = []
 
 
-def add(name, category, status, date, receiver, act, source):
+def add(name, category, status, date, receiver, act, source, resolution="Receivership"):
     name = re.sub(r"\s+", " ", name).strip().strip(".")
     if not name:
         return
     rows.append(dict(institution_name=name, category=category, status=status,
-                     revocation_date=date, receiver=receiver, legal_basis=act,
+                     revocation_date=date, receiver=receiver,
+                     resolution_mechanism=resolution, legal_basis=act,
                      source_document=source))
 
 
@@ -92,10 +93,12 @@ mc_ceased = harvest_mc(mc_annex[mc_split:])
 
 for n in mc_insolvent:
     add(n, "Microcredit / money lending", "Insolvent", "2019-05-31", "Not applicable (wound up via Registrar)",
-        "Act 774 s.7", "BoG Notice, 31 May 2019 (microcredit)")
+        "Act 774 s.7", "BoG Notice, 31 May 2019 (microcredit)",
+        resolution="Wound up via the Registrar of Companies")
 for n in mc_ceased:
     add(n, "Microcredit / money lending", "Insolvent and ceased operations", "2019-05-31",
-        "Not applicable (wound up via Registrar)", "Act 774 s.7", "BoG Notice, 31 May 2019 (microcredit)")
+        "Not applicable (wound up via Registrar)", "Act 774 s.7", "BoG Notice, 31 May 2019 (microcredit)",
+        resolution="Wound up via the Registrar of Companies")
 
 # ---------- 3. Savings & loans / finance houses: 23 ----------
 sl_annex = sl[sl.index("ANNEX 1"):sl.index("ANNEX 2")]
@@ -114,24 +117,38 @@ for _, nm, lic in sl_rows:
         "BoG Notice, 16 Aug 2019 (savings & loans / finance houses)")
 
 # ---------- 4. Banks (from BoG press releases; see sources note) ----------
+# The receiver and the resolution mechanism are two different facts and are
+# recorded separately. An earlier version put "Consolidated into Consolidated
+# Bank Ghana" in the receiver column for seven of these banks; that is not a
+# receiver, and it misdescribes CBG, which is a bridge institution under
+# Act 930 s.127(11) rather than a consolidation of the banks it served.
+# See docs/universal-banks.md.
+#
+# Premium Bank and Heritage Bank are left blank: the source that corroborates
+# the others does not cover them, and a guess is worse than a documented gap.
+VERIFIED = ("BoG press releases 2017-2018; corroborated in "
+            "Bediako, Agyei & Asabre, GIRJ 3rd edn Vol 1(1), Dec 2025")
+UNVERIFIED = "BoG press releases 2019 - VERIFY against primary source"
+
 BANKS = [
-    ("UT Bank Ltd.", "2017-08-14", "Purchase & assumption by GCB Bank"),
-    ("Capital Bank Ltd.", "2017-08-14", "Purchase & assumption by GCB Bank"),
-    ("uniBank Ghana Ltd.", "2018-08-01", "Consolidated into Consolidated Bank Ghana"),
-    ("The Royal Bank Ltd.", "2018-08-01", "Consolidated into Consolidated Bank Ghana"),
-    ("Beige Bank Ltd.", "2018-08-01", "Consolidated into Consolidated Bank Ghana"),
-    ("Sovereign Bank Ltd.", "2018-08-01", "Consolidated into Consolidated Bank Ghana"),
-    ("Construction Bank Ltd.", "2018-08-01", "Consolidated into Consolidated Bank Ghana"),
-    ("Premium Bank Ltd.", "2019-01-04", "Consolidated into Consolidated Bank Ghana"),
-    ("Heritage Bank Ltd.", "2019-01-04", "Consolidated into Consolidated Bank Ghana"),
+    ("UT Bank Ltd.", "2017-08-14", "PwC", "Purchase and assumption by GCB Bank", VERIFIED),
+    ("Capital Bank Ltd.", "2017-08-14", "PwC", "Purchase and assumption by GCB Bank", VERIFIED),
+    ("uniBank Ghana Ltd.", "2018-08-01", "Nii Amanor Dodoo (KPMG)", "Bridge institution: Consolidated Bank Ghana (Act 930 s.127(11))", VERIFIED),
+    ("The Royal Bank Ltd.", "2018-08-01", "Nii Amanor Dodoo (KPMG)", "Bridge institution: Consolidated Bank Ghana (Act 930 s.127(11))", VERIFIED),
+    ("Beige Bank Ltd.", "2018-08-01", "Nii Amanor Dodoo (KPMG)", "Bridge institution: Consolidated Bank Ghana (Act 930 s.127(11))", VERIFIED),
+    ("Sovereign Bank Ltd.", "2018-08-01", "Nii Amanor Dodoo (KPMG)", "Bridge institution: Consolidated Bank Ghana (Act 930 s.127(11))", VERIFIED),
+    ("Construction Bank Ltd.", "2018-08-01", "Nii Amanor Dodoo (KPMG)", "Bridge institution: Consolidated Bank Ghana (Act 930 s.127(11))", VERIFIED),
+    ("Premium Bank Ltd.", "2019-01-04", "", "", UNVERIFIED),
+    ("Heritage Bank Ltd.", "2019-01-04", "", "", UNVERIFIED),
 ]
-for nm, dt, resolution in BANKS:
+for nm, dt, receiver, resolution, src in BANKS:
     rows.append(dict(institution_name=nm, category="Universal bank", status="Licence revoked",
-                     revocation_date=dt, receiver=resolution, legal_basis="Act 930",
-                     source_document="BoG press releases 2017-2019 - VERIFY against primary source"))
+                     revocation_date=dt, receiver=receiver, resolution_mechanism=resolution,
+                     legal_basis="Act 930 s.123(1)", source_document=src))
 
 # ---------- write master file ----------
-cols = ["institution_name", "category", "status", "revocation_date", "receiver", "legal_basis", "source_document"]
+cols = ["institution_name", "category", "status", "revocation_date", "receiver",
+        "resolution_mechanism", "legal_basis", "source_document"]
 with io.open(OUT + "defunct_institutions.csv", "w", encoding="utf-8", newline="") as f:
     w = csv.DictWriter(f, fieldnames=cols)
     w.writeheader()
