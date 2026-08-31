@@ -1,0 +1,34 @@
+{
+  "title": "Ghana's Banking Sector Collapse, 2017-2019: Open Dataset of 418 Resolved Institutions",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Baah, Samuel Ato Kwame",
+      "affiliation": "Independent researcher, Accra, Ghana"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "description": "<p>Every financial institution whose licence the Bank of Ghana revoked in the 2017-2019 banking-sector clean-up, compiled from the regulator's own published revocation notices, together with a hand-verified analysis of why the 23 savings and loans companies and finance houses failed.</p><p><strong>418 institutions. GHS 2.30 billion in net-worth deficits. Over 360,000 depositors.</strong></p><p>Two datasets are published. <code>defunct_institutions.csv</code> lists all 418 resolved institutions with their category, revocation date, receiver, resolution mechanism and statutory basis. <code>savings_loans_verified.csv</code> covers the 23 savings and loans companies and finance houses in detail, coding the reasons the Bank of Ghana itself stated for each failure.</p><p>Headline findings: related-party exposure appears in 17 of the 23 stated cases, and 14 of those 17 also cite misreporting or false accounting records; institutions the Bank had determined to be insolvent held deposit-taking licences for a median of 927.5 days; and five institutions account for two thirds of the total deficit.</p><p>The three source notices are archived in the repository so that any reader can check the original wording. Every figure is reproducible from the published CSVs by a Python pipeline and a SQLite analysis layer. Corrections to published findings are recorded in CHANGELOG.md rather than made silently.</p><p>This project reports what published regulatory documents state. It does not independently allege wrongdoing by any institution or any individual.</p>",
+  "keywords": [
+    "Ghana",
+    "banking",
+    "bank resolution",
+    "financial regulation",
+    "Bank of Ghana",
+    "Act 930",
+    "microfinance",
+    "savings and loans",
+    "receivership",
+    "depositor protection",
+    "open data"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/SamuelAtokwamebaah/ghana-banking-collapse",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
