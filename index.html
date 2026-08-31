@@ -229,8 +229,8 @@
 
 <figure>
   <figcaption>
-    <span class="t">Every institution breached the 180-day statutory deadline</span>
-    <span class="s">Years between the date the Bank of Ghana states each institution became insolvent and the date its licence was revoked. Act 930 s.105–106 require capital adequacy to be restored within 180 days, after which the Bank <i>shall</i> resolve the institution. The rule marks that limit. All twenty cleared it, by a median of 5.2&times;. Three institutions gave no date.</span>
+    <span class="t">Insolvent institutions kept their licences for a median of two and a half years</span>
+    <span class="s">Years between the date the Bank of Ghana states each institution became insolvent and the date its licence was revoked, 16 August 2019. The rule marks the median, 927.5 days. Act 930 s.123(1) obliges the Bank to revoke the licence of an institution it determines to be insolvent, but sets <i>no period</i> in which to do so, so these intervals breach no deadline: they show that none exists. Three institutions gave no date.</span>
   </figcaption>
   <div class="rows" id="c3"></div>
   <div class="refnote" id="c3note"></div>
@@ -249,7 +249,7 @@
 <section class="recs" aria-labelledby="recs-h">
   <div>
     <h2 id="recs-h">What follows from the data</h2>
-    <p class="lede">Five recommendations, each tied to a count in the charts above. The starting point is uncomfortable: <b>most of these rules already existed.</b> Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. Sections 104&ndash;106 gave the Bank of Ghana 180 days to resolve a failing institution, in mandatory terms, and that limit was breached in all twenty cases with a stated date. This was a gap between detection and consequence, not a gap in the rulebook.</p>
+    <p class="lede">Five recommendations, each tied to a count in the charts above. The starting point is uncomfortable: <b>most of these rules already existed.</b> Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. What did not exist, and still does not, is any period within which the Bank of Ghana must act once it has determined an institution to be insolvent. This was a gap between detection and consequence.</p>
   </div>
 
   <ol class="reclist">
@@ -313,7 +313,7 @@
       </div>
       <div>
         <h3>Attach a consequence to ignoring an examination finding, and publish the clock</h3>
-        <p>Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Four had stopped filing prudential returns altogether. Sterling stopped filing in <b>May 2010</b> and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and ss.104&ndash;106 already oblige resolution within 180 days. That deadline was missed in <b>every one of the twenty cases</b> with a stated insolvency date, by a median of 5.2&times;.</p>
+        <p>Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Four had stopped filing prudential returns altogether. Sterling stopped filing in <b>May 2010</b> and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and s.123(1) obliges revocation once insolvency is determined. What is absent is any period within which that must happen, and the median interval ran to <b>927.5 days</b>.</p>
         <ul>
           <li>Automatic escalation: a defined number of missed returns, or an unremedied examination finding, triggers formal notice, then a supervisory visit, then a presumption that s.107 grounds are met</li>
           <li>Publish the corrective-action clock: the date it started and the date it expires. A deadline only the supervisor can see is a discretion, not a deadline</li>
@@ -514,12 +514,12 @@ bars("c3", DATA.lag, {
   label: d => d.name,
   value: d => d.years,
   display: d => d.years.toFixed(1) + " yrs",
-  ref: 180/365.25,
-  tip: d => "<b>" + d.name + "</b><br><span class='m'>Insolvent from " + d.since + "<br>Licence revoked 16 August 2019<br>" + d.years.toFixed(1) + " years, " + (d.years*365.25/180).toFixed(1) + "× the 180-day statutory limit</span>"
+  ref: 927.5/365.25,
+  tip: d => "<b>" + d.name + "</b><br><span class='m'>Insolvent from " + d.since + "<br>Licence revoked 16 August 2019<br>" + Math.round(d.years*365.25).toLocaleString() + " days licensed while insolvent</span>"
 });
-document.getElementById("c3note").textContent = "Vertical rule marks the 180-day statutory limit (Act 930 s.105–106). Median overrun 5.2×; worst 19.2×.";
-table("t3", ["Institution", "Insolvent since", "Years to revocation", "× statutory limit"],
-  DATA.lag.map(d => [d.name, d.since, d.years.toFixed(1), (d.years*365.25/180).toFixed(1) + "×"]));
+document.getElementById("c3note").textContent = "Vertical rule marks the median, 927.5 days. Shortest 258 days; longest 3,455. Four institutions state an insolvency date preceding Act 930 (assented 14 September 2016) entirely.";
+table("t3", ["Institution", "Insolvent since", "Years to revocation", "Days licensed while insolvent"],
+  DATA.lag.map(d => [d.name, d.since, d.years.toFixed(1), Math.round(d.years*365.25).toLocaleString()]));
 
 // 4. deficit concentration
 const totalDef = DATA.deficit.reduce((a, b) => a + b.m, 0);

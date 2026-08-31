@@ -35,31 +35,40 @@ The specifics are unambiguous:
 
 ---
 
-## 2. Every institution breached the statutory deadline. All twenty of them.
+## 2. Insolvent institutions kept their licences for a median of two and a half years
 
-This is the finding, and it is not a matter of opinion. It is arithmetic against a number written in the law.
-
-**Act 930 sets a clock.** Section 105(2)(b) requires an undercapitalised institution to submit a capital restoration plan within **45 days** and to restore capital adequacy within **180 days**. Section 106(1)(b) gives a significantly undercapitalised institution, one holding less than half its required capital, **90 days** to rectify and **180 days** to restore. Section 106(3) then provides that on failure, or on any earlier deterioration, the Bank of Ghana
-
-> *shall without having to wait for the expiry of that period, place the bank, specialised deposit-taking institution or financial holding company into official administration ... or revoke its licence.*
-
-The verb is **shall**, not *may*.
-
-Measuring each institution's stated insolvency date against the 16 August 2019 revocation, and against that 180-day statutory maximum:
+The Bank of Ghana states, in its own notice, the date each institution became insolvent. Measuring those dates against the revocation on 16 August 2019:
 
 | | |
 |---|---|
 | Institutions with a stated insolvency date | 20 of 23 |
-| **Exceeded the 180-day statutory limit** | **20 of 20, 100%** |
-| Within the limit | **0** |
-| Median overrun | **5.2×** the statutory maximum (928 days) |
-| Worst | **19.2×**, Sterling Financial Services, 3,455 days |
+| Shortest interval | **258 days** |
+| **Median interval** | **927.5 days, two and a half years** |
+| Longest interval | **3,455 days, nine and a half years** |
 
-Not one institution in this dataset was resolved within the period the law prescribes. The median institution traded while insolvent for **more than five times** the statutory maximum.
+Every one of those days is a day an institution the regulator had determined to be insolvent could lawfully accept new deposits.
 
-**Sterling is the case that should not exist.** It reported a capital adequacy ratio of **-1,469%** as at March 2010, some thirty times below the point at which section 106 obliges immediate action. It stopped submitting prudential returns in May 2010 and folded its operations in 2011 without telling the Bank of Ghana. Its licence was revoked in **August 2019**: nine and a half years, or 19 times the statutory maximum, after the regulator had the numbers in front of it.
+**Sterling is the case that should not exist.** It reported a capital adequacy ratio of **-1,469%** as at March 2010. It stopped submitting prudential returns in May 2010 and folded its operations in 2011 without telling the Bank of Ghana. Its licence was revoked in **August 2019**, nine and a half years after the regulator had the numbers in front of it.
 
-Every month of that overrun is a month an insolvent institution could legally accept new deposits.
+### What the law required, and what it did not
+
+> [!IMPORTANT]
+> **An earlier version of this analysis described these intervals as breaches of a "180-day statutory deadline". That was wrong, and the claim has been withdrawn.** The arithmetic was never in question; the legal label on it was. The correction is recorded here rather than quietly removed, because the reasoning matters more than the headline it cost.
+
+Act 930 does contain 180-day periods, but **neither of them runs from insolvency**:
+
+- **s.105(2)(b)** requires capital adequacy to be restored *"within one hundred and eighty days of making that order"*. The clock runs from **an order of the Bank of Ghana**.
+- **s.106(1)(b)** gives 90 days to rectify and 180 to restore under **an agreement with the institution's board**. The clock runs from **that agreement**.
+
+Both periods begin only after a supervisory act. No public document shows that either an order or an agreement was made in respect of these twenty institutions. On the available evidence **no 180-day period ever began**, and a period that never started cannot be breached.
+
+There is a second, independent reason the old framing failed. Act 930 received assent on **14 September 2016**. Sterling's stated insolvency is March 2010; Crest, Dream and FirstTrust are 2015. **Four of the twenty were being measured against a statute that did not yet exist**, and two more, Express and Global Access, are recorded as "2016" with no month and cannot be placed on either side of the assent date.
+
+**The duty that was actually engaged is section 123(1)**, which requires the Bank of Ghana to revoke a licence where it determines that an institution is insolvent or likely to become insolvent within sixty days. That duty plainly applied: the Bank states the insolvency dates itself. Section 106(3) reinforces the direction of travel, obliging the Bank to act *"without having to wait for the expiry of that period"*, and the verb throughout is **shall**, not *may*.
+
+But **Act 930 attaches no deadline to the s.123(1) duty.** There is no period within which a determination of insolvency must be followed by revocation.
+
+That absence is the finding. It is not that the Bank of Ghana missed a deadline written in the Act; it is that **the Act sets no deadline for the one duty that mattered here**, and institutions the regulator had already judged insolvent held deposit-taking licences for a median of two and a half years while none ran.
 
 ## 3. The losses are concentrated, not spread
 
@@ -117,7 +126,7 @@ What the two together do establish: this was not a technical failure inside a sm
 Three conclusions, in order of confidence:
 
 1. **This was a governance failure before it was a financial one.** Undercapitalisation was the mechanism; related-party lending, on the regulator’s stated reasons, was the cause. Minimum capital requirements, the main policy response, do not address the behaviour those notices describe.
-2. **The law was adequate; it was not applied.** The Bank of Ghana identified insolvency correctly and early in most cases, and Act 930 obliged it to resolve within 180 days. Not one of the twenty was. The gap was between detection and consequence, and depositors funded it.
+2. **Detection worked; consequence did not follow.** The Bank of Ghana identified insolvency correctly and early in most cases, and section 123(1) obliged it to revoke. It did revoke, on average two and a half years later. Act 930 sets no period within which that must happen, so the delay breached nothing. The gap was between detection and consequence, and depositors funded it.
 3. **The concentration suggests targeted supervision would have worked.** Five institutions account for two-thirds of the deficit. They were identifiable years in advance.
 
 What follows from these is set out in **Recommendations** below.
@@ -133,18 +142,19 @@ Every recommendation below is tied to a specific finding above. The starting poi
 >
 > This was not a gap in regulation. It was a gap between detection and consequence. Recommendations that propose new rules miss the point.
 
-### 1. Enforce the deadline that already exists, and publish every extension
+### 1. Attach a deadline to section 123(1), and publish the clock
 
-**Finding:** 20 of 20 institutions breached the 180-day statutory limit; median overrun 5.2×.
+**Finding:** institutions the Bank of Ghana had determined to be insolvent held deposit-taking licences for a median of 927.5 days, two and a half years, and in one case nine and a half years.
 
-The first draft of this analysis recommended creating a statutory clock. **Checking the Act showed one already exists**, sections 104 to 106, in mandatory terms. The recommendation therefore is not to legislate. It is to close the gap between what the statute obliges and what happened.
+This recommendation has been through two reversals, and both are worth recording. The first draft proposed creating a statutory clock. The second withdrew it, on the belief that sections 104 to 106 already supplied one. **Checking those sections properly showed that they do not**: their 180-day periods run from a Bank of Ghana order or from an agreement with the institution's board, not from insolvency, and no public document shows that either was ever made here. The duty actually engaged is section 123(1), and **Act 930 attaches no period to it at all.**
+
+So the first draft was right. There is a gap in the statute, not merely in its application.
 
 **Recommend:**
-- **Publish the clock.** For every institution under corrective action, the date the deadline started and the date it expires, disclosed to the market. A deadline nobody outside the supervisor can see is not a deadline; it is a discretion.
-- **Require a written, published justification for every extension of the section 105/106 period**, time-limited and countersigned at board level within the Bank of Ghana. Forbearance may sometimes be correct, the systemic risk of resolving many institutions at once is real. But it should be a recorded decision with a name attached, not a silence.
-- **Report annually on compliance with sections 104–106**: how many institutions entered corrective action, how many were resolved within 180 days, and the distribution of overruns. On the evidence here, that number would have been zero out of twenty.
-
-The rule was never the problem. The absence of any consequence for the supervisor missing its own statutory deadline was.
+- **Set a statutory period in section 123(1).** Once the Bank of Ghana determines that an institution is insolvent, revocation or official administration should follow within a defined number of days. Any period would be an improvement on the present position, which is none.
+- **Publish the clock.** For every institution under corrective action, the date a determination was made and the date any period expires, disclosed to the market. A deadline nobody outside the supervisor can see is not a deadline; it is a discretion.
+- **Require a written, published justification for every extension**, time-limited and countersigned at board level within the Bank of Ghana. Forbearance is sometimes correct, and the systemic risk of resolving many institutions at once is real. But it should be a recorded decision with a name attached, not a silence.
+- **Report annually on the interval** between determination of insolvency and resolution, with its distribution. On the evidence here the median would have read two and a half years.
 
 ### 2. Treat a missing return as the trigger the Act already makes it
 
@@ -204,7 +214,7 @@ Honesty requires noting the reforms that followed the clean-up, so none of the a
 | Capital Requirement, Risk Management, and further directives | 15+ issued since 2018 |
 | Large Exposures Directive | September 2025 |
 
-**The gap that remains is not the rulebook.** Nearly all of the above governs how an institution should be run, and sections 104–106 of Act 930 already oblige the supervisor to act within 180 days once one is failing. On the evidence of this dataset that deadline was missed in every single case, by a median of more than five times. What is missing is any consequence, or even any disclosure, when the supervisor misses its own statutory limit.
+**The gap that remains is on the supervisor's side of the line.** Nearly all of the above governs how an institution should be run. Very little governs how quickly the supervisor must act once it has concluded that one has failed. Section 123(1) obliges the Bank of Ghana to revoke the licence of an institution it determines to be insolvent, but fixes no period in which to do it, and the 180-day periods in sections 105 and 106 run from supervisory acts that no public document records here. What is missing is a deadline on the duty that was actually engaged, and any disclosure of the interval when it runs long.
 
 > [!NOTE]
 > **Verified against Act 930 itself, August 2026.** An earlier draft recommended creating a statutory intervention clock; reading sections 104–106 showed one already existed, which changed the finding in section 2 from *"the regulator was slow"* to *"every institution breached a deadline written in the statute."* The directive table above reflects sources gathered in August 2026, check [bog.gov.gh](https://www.bog.gov.gh/) for anything issued since.

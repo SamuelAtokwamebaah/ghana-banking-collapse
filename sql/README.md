@@ -32,7 +32,7 @@ Or open `ghana.db` in DB Browser for SQLite, DBeaver, or anything else that spea
 | `02_load.sql` | n/a | CSV import for the sqlite3 shell |
 | `10_failure_causes.sql` | How often is each cause cited? | Chart 1, finding 1 |
 | `11_cooccurrence.sql` | Do related-party lending and misreporting travel together? | Chart 2, finding 2 |
-| `12_supervisory_lag.sql` | How long did each institution stay licensed while insolvent? | Chart 3, finding 3 |
+| `12_supervisory_lag.sql` | How long did each institution stay licensed while insolvent? | Chart 3, finding 2 |
 | `13_deficit_concentration.sql` | How concentrated are the losses? | Chart 4, finding 4 |
 | `14_sector_reconciliation.sql` | Does the dataset reconcile to the Bank of Ghana's stated totals? | The 418-row counts |
 
@@ -46,9 +46,11 @@ Run them in any order; only `01` and `02` have to come first.
 
 ## What this layer caught
 
-Writing `12_supervisory_lag.sql` corrected a published number. With n = 20 the median is the mean of the 10th and 11th ordered values, 898 and 957 days, which is 927.5 days, or **5.2×** the 180-day statutory limit. The earlier figure of 5.3× had taken the upper of the two middle values instead of averaging them.
+Writing `12_supervisory_lag.sql` corrected a published number. With n = 20 the median is the mean of the 10th and 11th ordered values, 898 and 957 days, which is **927.5 days**. The earlier figure had taken the upper of the two middle values instead of averaging them.
 
-It changes nothing about the finding: still 20 breaches out of 20, still 19.2× at the worst. But it is the second time on this project that redoing the arithmetic a different way caught an error the first pass missed, which is the argument for doing it twice.
+Rereading the same query later caught something larger. It had described those intervals as breaches of a 180-day statutory deadline, and there is no such deadline: the 180-day periods in ss.105 and 106 run from a Bank of Ghana order or a board agreement, not from insolvency, and no public document records either being made. The file header now sets out the correction in full. **The interval survives; the legal label on it did not.**
+
+That is twice on this project that redoing the work a different way caught something the first pass missed, which is the argument for doing it twice.
 
 ## Caveats
 

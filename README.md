@@ -14,19 +14,19 @@ Every financial institution closed in Ghana's banking-sector clean-up, compiled 
 The Bank of Ghana revoked 23 savings and loans and finance house licences on 16 August 2019, publishing its reasons for each. Coding those reasons shows the failures were not accidents of a hard market:
 
 - **Related-party lending appears in 17 of 23 institutions**, and 14 of those 17 also involved misreporting or false accounting records. That co-occurrence is the story. In those cases the Bank of Ghana's notice describes funds placed with companies connected to the institutions' owners, alongside accounts that did not reflect them.
-- **Every institution breached the statutory deadline, all twenty of them.** Act 930 s.105–106 require capital adequacy to be restored within **180 days**, after which the Bank of Ghana *shall* resolve the institution. Median overrun: **5.2×**. Worst: Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011, and kept its licence until **2019**. That is **19.2×** the statutory maximum.
+- **Insolvent institutions kept their licences for a median of two and a half years.** Measured from the insolvency date the Bank of Ghana states itself to the revocation on 16 August 2019: shortest **258 days**, median **927.5 days**, longest **3,455 days**. That longest case is Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011, and kept its licence until **2019**. Act 930 sets no deadline for revoking the licence of an institution the Bank has determined to be insolvent, which is the point: the delay broke no rule because no rule governs it.
 - **Losses are concentrated, not spread.** Five institutions account for **68%** of the GHS 2.30bn deficit. They were identifiable years in advance.
 
 Liquidity failure, being unable to pay depositors, is cited in 21 of 23 cases. It is the symptom. On the regulator’s stated reasons, related-party lending is the cause.
 
 ### What follows from it
 
-The uncomfortable part is that **the rules already existed**. Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. Sections 104–106 set a 180-day statutory clock for resolving a failing institution, in mandatory terms, and it was missed in **every single case**. On-site examinations identified the problems; six institutions ignored the recommendations with no consequence.
+The uncomfortable part is that **most of the rules already existed**. Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. On-site examinations identified the problems; six institutions ignored the recommendations with no consequence. The exception is the supervisor's own timetable: s.123(1) obliges the Bank of Ghana to revoke the licence of an institution it determines to be insolvent, but fixes **no period** in which to do so.
 
 This was a gap between detection and consequence, not a gap in regulation. The [recommendations](#recommendations) below follow from it, led not by writing new rules but by **publishing the clock and requiring a justification for every extension**. [FINDINGS.md](FINDINGS.md) sets them out at length, alongside a table of the reforms Ghana has already implemented since 2018.
 
 > [!NOTE]
-> **This is what verification is for.** The first draft recommended creating a statutory intervention deadline. Reading Act 930 showed one already existed, which turned a soft observation, *the regulator was slow*, into a hard, checkable finding: **20 of 20 institutions breached a limit written in the statute, by a median of 5.2×.**
+> **This is what verification is for, including when it goes the other way.** The first draft recommended creating a statutory intervention deadline. A second pass concluded that one already existed in ss.104–106 and recast the finding as a breach of it. **Checking those sections properly showed that reading was wrong**: their 180-day periods run from a Bank of Ghana order or a board agreement, not from insolvency, and four of the twenty institutions state an insolvency date preceding Act 930 altogether. The breach claim has been withdrawn and the original recommendation restored. What survives is stronger for being right: **a median of 927.5 days between the insolvency the Bank itself states and the revocation, against a statute that sets no deadline at all.**
 
 Read the full analysis in **[FINDINGS.md](FINDINGS.md)**.
 
@@ -37,7 +37,7 @@ Read the full analysis in **[FINDINGS.md](FINDINGS.md)**.
 Five recommendations, each tied to a count in the dataset. The starting point is uncomfortable:
 
 > [!IMPORTANT]
-> **Most of these rules already existed.** Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. Sections 104–106 gave the Bank of Ghana 180 days to resolve a failing institution, in mandatory terms, and that limit was breached in all twenty cases with a stated insolvency date. This was a gap between detection and consequence, not a gap in the rulebook.
+> **Most of these rules already existed.** Act 930 s.64(2) capped related-party exposure at 25% of net own funds; CDH ran at 319%. What did not exist, and still does not, is any period within which the Bank of Ghana must act once it has determined an institution to be insolvent. This was a gap between detection and consequence.
 
 ### 1. Compute the related-party limit from filed data, not from the institution's word
 
@@ -72,9 +72,9 @@ Governance sits underneath the other two causes rather than beside them: a board
 
 ### 4. Attach a consequence to ignoring an examination finding, and publish the clock
 
-**Evidence: 6 of 23 ignored the Bank of Ghana's own examination recommendations; 4 had stopped filing prudential returns; 20 of 20 breached the 180-day statutory deadline.**
+**Evidence: 6 of 23 ignored the Bank of Ghana's own examination recommendations; 4 had stopped filing prudential returns; median 927.5 days between stated insolvency and revocation.**
 
-Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Sterling stopped filing in **May 2010** and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and ss.104–106 already oblige resolution within 180 days, missed in every case, by a median of 5.2×.
+Six institutions were examined, told what was wrong, and did nothing. Nothing followed. Sterling stopped filing in **May 2010** and kept its licence until 2019. The powers were there: s.107(1)(e) already makes failure to submit records a ground for official administration, and s.123(1) obliges revocation once insolvency is determined. What is absent is any period within which that must happen.
 
 - Automatic escalation: a defined number of missed returns, or an unremedied examination finding, triggers formal notice, then a supervisory visit, then a presumption that s.107 grounds are met
 - Publish the corrective-action clock: the date it started and the date it expires. A deadline only the supervisor can see is a discretion, not a deadline
@@ -181,13 +181,13 @@ expected result as a comment:
 ```bash
 python scripts/build_sqlite.py                      # loads both CSVs into sql/ghana.db
 sqlite3 sql/ghana.db < sql/10_failure_causes.sql    # -> related_party 17, misreporting 15, ...
-sqlite3 sql/ghana.db < sql/12_supervisory_lag.sql   # -> 20 of 20 breached the 180-day limit
+sqlite3 sql/ghana.db < sql/12_supervisory_lag.sql   # -> median 927.5 days licensed while insolvent
 ```
 
 See [`sql/README.md`](sql/README.md) for what each file answers. Writing that
-layer corrected a published figure: the median overrun is **5.2×**, not 5.3×;
-with n = 20 the median is the mean of the two middle values, and the first pass
-had taken the upper one.
+layer corrected a published figure: the median interval is **927.5 days**, the
+mean of the two middle values with n = 20, where the first pass had taken the
+upper one.
 
 To regenerate `data/raw/` from the PDFs in `sources/` (requires `poppler-utils`):
 
