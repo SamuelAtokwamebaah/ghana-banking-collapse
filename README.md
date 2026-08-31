@@ -222,6 +222,12 @@ Open `index.html` in any browser for the charts: no server, no internet, no buil
 
 ---
 
+## Corrections
+
+Findings in this repository are versioned and citable, so corrections to them are recorded rather than made silently. See [CHANGELOG.md](CHANGELOG.md).
+
+**v1.1.0 withdrew one published finding.** An earlier version described the gap between stated insolvency and revocation as a breach of a 180-day statutory deadline in Act 930. There is no such deadline on the duty engaged: the Act's 180-day periods run from a Bank of Ghana order or an agreement with the institution's board, not from insolvency. The intervals themselves are unchanged and remain as published.
+
 ## Notice
 
 This project analyses documents published by the Bank of Ghana and other public sources. **It reports what those documents state. It does not independently allege wrongdoing by any institution or any individual.**
