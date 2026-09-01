@@ -42,9 +42,18 @@
 --
 -- NORMALISING THE DATE
 -- The notice gives some insolvency dates as a month ('2017-03') and some as a
--- year only ('2015'). Year-only dates are read as 1 January, which makes the
--- interval as SHORT as the source permits, the conservative direction. Three
--- institutions have no stated date at all and are excluded rather than guessed.
+-- year only ('2015'). Year-only dates are read as 1 January.
+--
+-- An earlier version of this comment called that the shortest interval the
+-- source permits, and the conservative direction. It is the opposite: an
+-- earlier insolvency date gives a LONGER run to a fixed revocation date, so
+-- 1 January is the longest reading available. The figures below are therefore
+-- an upper reading, not a conservative one. Reading year-only dates as
+-- 31 December and month-only as month end gives the conservative floor, which
+-- moves the median from 928 to 792 days.
+--
+-- Three institutions have no stated date at all and are excluded rather than
+-- guessed.
 
 WITH lag AS (
     SELECT
