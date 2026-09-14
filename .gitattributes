@@ -10,4 +10,9 @@ data/raw/*.txt -text
 
 # index.html is the rendered output of the analysis, not its source.
 # Exclude it from language stats so the repo reports what the work was.
-index.html linguist-documentation
+# Anchored to the root, so dashboard/index.html, which is hand-written code, still counts.
+/index.html linguist-documentation
+
+# GitHub leaves SQL out of the language bar by default, as a data format.
+# Here it is the analysis layer, so count it.
+*.sql linguist-detectable
