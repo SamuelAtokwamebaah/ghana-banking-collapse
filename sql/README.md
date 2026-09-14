@@ -35,6 +35,7 @@ Or open `ghana.db` in DB Browser for SQLite, DBeaver, or anything else that spea
 | `12_supervisory_lag.sql` | How long did each institution stay licensed while insolvent? | Chart 3, finding 2 |
 | `13_deficit_concentration.sql` | How concentrated are the losses? | Chart 4, finding 4 |
 | `14_sector_reconciliation.sql` | Does the dataset reconcile to the Bank of Ghana's stated totals? | The 418-row counts |
+| `bi/` | A star schema, marts and KPIs over the same two tables | The dashboard; see [`docs/bi-data-model.md`](../docs/bi-data-model.md) |
 
 Run them in any order; only `01` and `02` have to come first.
 

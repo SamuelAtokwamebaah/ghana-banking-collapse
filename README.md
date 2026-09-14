@@ -5,7 +5,7 @@ Every financial institution closed in Ghana's banking-sector clean-up, compiled 
 
 **418 institutions. GHS 2.30 billion in net-worth deficits. Over 360,000 depositors.**
 
-📊 **[Interactive charts](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/)** · 📄 **[Full findings](FINDINGS.md)**
+📊 **[Interactive charts](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/)** · 🔎 **[Explore the data](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/dashboard/)** · 📄 **[Full findings](FINDINGS.md)**
 
 ---
 
@@ -131,10 +131,15 @@ scripts/
   build_dataset.py              parses the notices -> defunct_institutions.csv
   build_sl_verified.py          the 23 savings & loans, transcribed by hand
   build_sqlite.py               loads both CSVs into sql/ghana.db
+  build_dashboard_data.py       runs the BI views -> dashboard/data.json
 sql/                            the same findings as runnable SQL queries
+  bi/                           star schema, marts and KPIs, as SQL views
 docs/
   sourcing-deposits.md          where deposit and depositor figures do and don't exist
   universal-banks.md            the nine banks: what is corroborated, and one correction
+  bi-data-model.md              the star schema, and what it leaves out
+  kpi-definitions.md            eight headline figures, each with its query and caveats
+dashboard/                      the interactive dashboard and the data it reads
 index.html                      the charts, self-contained
 ```
 
@@ -197,6 +202,30 @@ pdftotext -layout sources/bog-2019-08-16-savings-loans-revocation.pdf \
 ```
 
 Open `index.html` in any browser for the charts: no server, no internet, no build step.
+
+---
+
+## Business Intelligence layer
+
+**[Open the dashboard](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/dashboard/)**
+
+[![The dashboard: eight KPI cards, and a matrix of which failure causes the Bank of Ghana cites together](docs/img/dashboard.png)](https://SamuelAtokwamebaah.github.io/ghana-banking-collapse/dashboard/)
+
+The charts page makes the argument. The dashboard lets a reader test it: pick any two of the ten causes and compare, look up any of the 23 institutions, or split the supervisory interval by cause.
+
+**A star schema over the 23, built as SQL views in [`sql/bi/`](sql/bi/).** Two fact tables share three dimensions: `fact_cited_causes`, one row per cause the notice cites for an institution (101), and `fact_institution_snapshot`, one row per institution at revocation (23), joined to institutions, causes and licence types. Three marts sit on top, and `v_kpis` gives eight headline figures. Nothing is copied: drop the views and the database is what `build_sqlite.py` produced. [docs/bi-data-model.md](docs/bi-data-model.md) sets out the design, including why there is no region dimension (the notice gives no location) and no date dimension (every revocation falls on one day).
+
+**Every number on the dashboard is a column of a view.** [`build_dashboard_data.py`](scripts/build_dashboard_data.py) runs the views and writes `dashboard/data.json`, refusing to write anything unless 13 reconciliation checks pass against the existing queries. The page formats, sorts and filters, and calculates nothing. Each KPI is defined with its own query and caveats in [docs/kpi-definitions.md](docs/kpi-definitions.md).
+
+**It also shows a result the charts page does not.** Liquidity failure is cited in 15 of the 17 institutions with related-party exposure, but in all 6 of those without it, so that pairing does not separate the two groups. Misreporting does: 14 of 17, against 1 of 6. The co-occurrence supports the related-party and misreporting finding, and is silent on whether related-party lending caused the liquidity failures.
+
+```bash
+python scripts/build_dashboard_data.py        # views -> dashboard/data.json, after 13 checks
+python scripts/build_dashboard_data.py --db   # also writes sql/ghana.db with every view, for a BI tool
+python -m http.server                         # then open http://localhost:8000/dashboard/
+```
+
+The dashboard fetches its data, so unlike `index.html` it needs to be served; GitHub Pages does that. It uses Plotly, pinned, and the charts page's colours, adding one orange to tell the two licence types apart. Every chart has a table view.
 
 ---
 
