@@ -128,7 +128,7 @@ SELECT 'All',
 **Caveats.**
 - A count of what the notice states, not a measure of how badly an institution failed. First Ghana has 2 cited causes and IFS 2; Dream has 7. The notice may simply say more about some institutions than others.
 - Finance houses number 7. The gap between 5.4 and 3.9 is a description of these 7 and these 16.
-- The comment at the top of `sql/10_failure_causes.sql` gives the average as 4.0. The figure is 4.39; the comment is wrong and the query's results are unaffected.
+- The comment at the top of `sql/10_failure_causes.sql` gave the average as 4.0 until it was corrected to 4.39. The query's results were never affected.
 
 ## 6. Median days licensed while insolvent
 

@@ -7,7 +7,7 @@
 -- counting. Unpivot them into one row per (institution, cause) first.
 --
 -- Institutions typically failed for several reasons at once, so these do not
--- sum to 23. The mean is 4.0 causes each.
+-- sum to 23. The mean is 4.39 causes each: 101 citations across 23 institutions.
 
 WITH cited AS (
     SELECT institution_name, 'liquidity_failure'              AS cause FROM savings_loans WHERE liquidity_failure              = 'Y'
