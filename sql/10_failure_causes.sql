@@ -51,6 +51,7 @@ ORDER BY institutions DESC, cause;
 --   stopped_prudential_returns        4   17%
 --   ceased_ops_without_approval       3   13%
 --
--- Read it in that order and the argument makes itself. Liquidity failure —
--- being unable to pay depositors — is the most cited, but it is what the
--- public sees at the end. Related-party exposure is what caused it.
+-- Liquidity failure, being unable to pay depositors, is the most cited, and it
+-- is what the public saw. It is cited for almost every institution, so on its
+-- own it distinguishes little. 11_cooccurrence.sql shows the pairing that does:
+-- related-party exposure with misreporting.

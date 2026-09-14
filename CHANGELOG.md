@@ -3,6 +3,43 @@
 This dataset is archived on Zenodo and citable by DOI. Published findings therefore
 carry a version, and any correction to them is recorded here rather than made silently.
 
+## Unreleased, since v1.1.0
+
+**One interpretation was reworded to what the data shows. No figure or data changed.**
+
+### Reworded
+
+The charts page, README and FINDINGS described liquidity failure as the *symptom* and
+related-party lending as the *cause*. The co-occurrence data does not show that.
+Liquidity failure is cited in 15 of the 17 institutions with related-party exposure, and
+in all 6 without it, so it does not separate the two groups; and the notice does not
+record which came first.
+
+The wording now says what the data does show. Liquidity failure is the failure
+depositors saw. What sets institutions apart is related-party exposure together with
+misreporting: 14 of 17, against 1 of 6. Chart 1 is retitled *21 of 23 could not pay
+depositors. 17 of 23 had lent to related parties.*
+
+The FINDINGS headline, *in 17 of 23 cases the money went to the owners*, now reads
+*related parties*. The coded cause is related-party exposure, which the notice describes
+as funds placed with companies connected to the owners, not only with the owners
+themselves.
+
+This surfaced while building the BI layer below, which compares each pair of causes
+against the institutions that do not cite the first.
+
+### Added
+
+- A BI layer: a star schema as SQL views in `sql/bi/`, eight KPIs defined with their
+  queries and caveats in `docs/kpi-definitions.md`, and an interactive dashboard in
+  `dashboard/`, whose data `scripts/build_dashboard_data.py` builds from the views after
+  13 reconciliation checks.
+
+### Corrected
+
+- The header comment in `sql/10_failure_causes.sql` gave the mean as 4.0 causes per
+  institution. It is 4.39, 101 across 23. The query's results were unaffected.
+
 ## v1.1.0 — 30 August 2026
 
 **A published finding was withdrawn. No data changed.**

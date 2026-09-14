@@ -17,7 +17,7 @@ The Bank of Ghana revoked 23 savings and loans and finance house licences on 16 
 - **Insolvent institutions kept their licences for a median of two and a half years.** Measured from the insolvency date the Bank of Ghana states itself to the revocation on 16 August 2019: shortest **258 days**, median **927.5 days**, longest **3,455 days**. That longest case is Sterling Financial Services, which reported a capital adequacy ratio of **-1,469% in March 2010**, stopped filing returns two months later, folded in 2011, and kept its licence until **2019**. Act 930 sets no deadline for revoking the licence of an institution the Bank has determined to be insolvent, which is the point: the delay broke no rule because no rule governs it.
 - **Losses are concentrated, not spread.** Five institutions account for **68%** of the GHS 2.30bn deficit. They were identifiable years in advance.
 
-Liquidity failure, being unable to pay depositors, is cited in 21 of 23 cases. It is the symptom. On the regulator’s stated reasons, related-party lending is the cause.
+Liquidity failure, being unable to pay depositors, is cited in 21 of 23 cases. It is the failure depositors saw, but it does not set the institutions apart: it is cited in all six without related-party lending too. What does is misreporting, cited alongside related-party lending in 14 of 17 cases and in only 1 of the other 6.
 
 ### What follows from it
 

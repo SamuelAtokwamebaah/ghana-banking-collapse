@@ -2,7 +2,7 @@
 
 Analysis of the 23 savings and loans companies and finance houses whose licences the Bank of Ghana revoked on 16 August 2019. Every figure is from Annex 2 of [the BoG notice](https://www.bog.gov.gh/wp-content/uploads/2019/08/Revocation-of-Licenses-of-SDIs-16.8.19.pdf), hand-transcribed in `build_sl_verified.py`.
 
-**Headline:** these institutions did not fail from bad luck or a difficult market. In 17 of 23 cases the money went to the owners.
+**Headline:** these institutions did not fail from bad luck or a difficult market. In 17 of 23 cases the money went to related parties.
 
 ---
 
@@ -23,7 +23,7 @@ Analysis of the 23 savings and loans companies and finance houses whose licences
 | Stopped submitting prudential returns | 4 | 17% |
 | Ceased operations without approval | 3 | 13% |
 
-Liquidity failure at 91% is the *symptom*. It is what a depositor experiences and what triggers the complaint to the regulator. The cause sits above it.
+Liquidity failure at 91% is the failure a depositor experiences, and what brings complaints to the regulator. Because it is cited for almost every institution, including all six without related-party exposure, it does little to distinguish one failure from another. The pattern that does sits above it.
 
 **Related-party exposure appears in 17 of 23. And 14 of those 17 also involved misreporting.** That co-occurrence is the finding. On the regulator's account these are not two separate problems: the notice describes funds placed with companies connected to the institutions' owners, and accounts that did not reflect them.
 
@@ -117,7 +117,7 @@ The figures above are balance-sheet deficits. The Receiver's own reporting gives
 > **These are not comparable to the GHS 2.30bn above**
 > The GHS 2.30bn is the net-worth deficit of the **23 savings and loans companies only**. The GHS 6.4bn is depositor claims across **all 409 resolved institutions**. Different denominators, different measures. Never put them in the same sentence without saying so.
 
-What the two together do establish: this was not a technical failure inside a small sector. Over a third of a million people had money they could not reach, and the state committed GHS 5 billion of public funds to make them whole, while, on the evidence in section 1, the money had in most cases gone to the owners.
+What the two together do establish: this was not a technical failure inside a small sector. Over a third of a million people had money they could not reach, and the state committed GHS 5 billion of public funds to make them whole, while, on the evidence in section 1, the money had in most cases gone to related parties.
 
 ---
 

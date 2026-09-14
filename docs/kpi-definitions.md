@@ -98,7 +98,7 @@ WHERE cause_a = 'related_party_exposure'
 **Result.** 15 of 17 (88%), against 6 of 6 (100%) where related-party exposure is not cited.
 
 **Caveats.**
-- **This KPI is here because it does not support the obvious story.** The charts page reads liquidity failure as the symptom and related-party lending as the cause. The data is consistent with that reading, but it does not show it: liquidity failure is cited in every institution without related-party exposure, so the two groups do not differ on it.
+- **This KPI is here because it does not support the obvious story.** Earlier versions of the charts page, README and FINDINGS read liquidity failure as the symptom and related-party lending as the cause. The data is consistent with that reading, but it does not show it: liquidity failure is cited in every institution without related-party exposure, so the two groups do not differ on it. That wording has been replaced; see CHANGELOG.md.
 - What the data does show is KPI 3. A reader who takes one figure from this dashboard to support the causal reading should take that one, with its caveats.
 
 ## 5. Average causes cited per institution
